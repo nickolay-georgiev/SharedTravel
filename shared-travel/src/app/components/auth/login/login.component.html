@@ -1,0 +1,37 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <header class="card-header">
+            <h4 class="card-title mt-2">Sign in</h4>
+        </header>
+        <!-- Login Form -->
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <input formControlName="email" type="text" id="login" class="fadeIn second" name="email"
+                placeholder="Email">
+            <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.required && f.email.touched">Email is
+                required
+            </div>
+            <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.email && f.email.touched">Please enter a valid
+                email address
+            </div>
+
+            <input formControlName="password" type="password" id="password" class="fadeIn third" name="password"
+                placeholder="Password">
+            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.required && f.password.touched">Password is required
+            </div>
+            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.minlength && f.password.touched">
+                Password can not be less than 6 symbols
+            </div>
+            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.maxlength && f.password.touched">
+                Password can not be more than 15 symbols
+            </div>
+
+            <button [disabled]="!isValid" class="fadeIn fourth" type="submit">Log In</button>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+    </div>
+</div>
+

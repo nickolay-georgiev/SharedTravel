@@ -6,8 +6,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
