@@ -5,14 +5,26 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
+import { TransformUsernamePipe } from './pipes/transform-username.pipe';
+import { HideElementDirective } from './directives/hide-element.directive';
+import { ReadOnlyDirective } from './directives/read-only.directive';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TransformUsernamePipe,
+    ReadOnlyDirective,
+    HideElementDirective,
+  ],
   imports: [
     CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+  ],
+  exports: [
+    TransformUsernamePipe,
+    ReadOnlyDirective,
+    HideElementDirective,
   ]
 })
 export class CoreModule { }

@@ -40,4 +40,23 @@ export class UserService {
   get currentUserId(): string {
     return this.userId ? this.userId : null;
   }
+
+  updateUserPhoto(photo: File): Observable<UploadTaskSnapshot> {
+    const path = `user-images/${this.userId}`;
+    const ref = this.storage.ref(path);
+    this.task = this.storage.upload(path, photo);
+
+    return this.task.snapshotChanges().pipe(
+      finalize(async () => {
+        this.downloadURL = await ref.getDownloadURL().toPromise();
+        this.updateUserAvatar(this.downloadURL);
+      }),
+    );
+  }
+  
+  private updateUserAvatar(imgUrl: string) {
+    this.afs.collection('users').doc(this.userId).update({ imgUrl: imgUrl }).then(() => {
+      this.router.navigate(['/user/edit']);
+    });
+  }
 }

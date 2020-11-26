@@ -1,0 +1,14 @@
+<div class="modal-container">
+    <input id="modal-toggle" type="checkbox">
+    <label class="modal-btn" appHideElement for="modal-toggle">Change Photo</label>
+    <label class="modal-backdrop" for="modal-toggle"></label>
+    <div class="modal-content">
+      <div class="form-group">
+        <label class="button-label" for="file">Choose Photo</label>
+        <input style="display:none;" type="file" id="file" (change)="handleFileInput($event.target.files)">
+      </div>
+      <hr />
+      <p>Select a photo to change your avatar</p>
+      <label class="modal-content-btn" for="modal-toggle">Close</label>
+    </div>
+  </div>

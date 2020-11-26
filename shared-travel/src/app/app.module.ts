@@ -7,6 +7,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from './components/auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { UserModule } from './components/user/user.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    UserModule,
     CoreModule
   ],
   providers: [],
