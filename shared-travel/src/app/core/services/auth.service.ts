@@ -2,7 +2,7 @@ import { Router } from "@angular/router";
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { IUser } from '../interfaces/user';
+import { IUser } from '../interfaces/User';
 
 
 

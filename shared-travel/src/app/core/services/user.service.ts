@@ -5,7 +5,7 @@ import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
-import { IUser } from '../interfaces/user';
+import { IUser } from '../interfaces/User';
 
 @Injectable({
   providedIn: 'root'

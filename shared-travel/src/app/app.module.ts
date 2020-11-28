@@ -8,18 +8,20 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthModule } from './components/auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './components/user/user.module';
+import { TripModule } from './components/trip/trip.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
     UserModule,
+    TripModule,
     CoreModule
   ],
   providers: [],

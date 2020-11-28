@@ -1,0 +1,120 @@
+<section id="book-a-table" class="book-a-table">
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <h2 class="text-primary">Book A Table</h2>
+                <p class="mb-5">Bootstrap table reservation form template design is created by using bootstrap where
+                    users can book online restaurant tables, food orders according to yourself.</p>
+            </div>
+        </div>
+
+        <form [formGroup]="tripForm" (submit)="submitTripForm()">
+            <div class="form-row">
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="Country">Country</label>
+                    <input formControlName="country" type="text" name="country" class="form-control" id="country" placeholder="Country">
+                    <div class="alert alert-danger fadeIn" *ngIf="f.country.errors?.required && f.country.touched">
+                        Country is required
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.country.errors?.minlength && f.country.touched">
+                        Country name can not be less than 3 symbols
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.country.errors?.maxlength && f.country.touched">
+                        Country name can not be more than 30 symbols
+                    </div>
+                </div>               
+                
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="City">City</label>
+                    <input formControlName="city" type="text" class="form-control" name="city" id="city" placeholder="City">
+                    <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.required && f.city.touched">
+                        City is required
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.minlength && f.city.touched">
+                        City name can not be less than 2 symbols
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.maxlength && f.city.touched">
+                        City name can not be more than 50 symbols
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="End date">Number Of People</label>
+                    <input formControlName="groupSize" type="number" class="form-control" name="people" id="people" placeholder="No. of people">
+                    <div class="alert alert-danger fadeIn" *ngIf="f.groupSize.errors?.required && f.groupSize.touched">
+                        Number of people is required
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.groupSize.errors?.min && f.groupSize.touched">
+                        Number of people can not be less than 1 symbols
+                    </div>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.groupSize.errors?.max && f.groupSize.touched">
+                        Number of people can not be more than 1000 symbols
+                    </div>
+                </div>
+                <ng-container formGroupName="duration">
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="Start date">Start Date</label>
+                        <input formControlName="startDate" type="date" name="startDate" class="form-control" id="startDate" placeholder="Date">
+                        <div class="alert alert-danger fadeIn" *ngIf="startDate.errors?.required && startDate.touched">
+                            Start date is required
+                        </div>      
+                        <div class="alert alert-danger fadeIn" *ngIf="startDate.errors?.invalidStartDate">
+                            Invalid start date
+                        </div>    
+                        <div class="alert alert-danger fadeIn" *ngIf="startDate.errors?.invalidStartDatePeriod">
+                            Start date can not be after or equal to the end date
+                        </div>           
+                    </div>
+                    <div class="col-lg-4 col-md-6 form-group">
+                        <label for="End date">End Date</label>
+                        <input formControlName="endDate" type="date" name="date" class="form-control" id="date" placeholder="Date">
+                        <div class="alert alert-danger fadeIn" *ngIf="endDate.errors?.required && endDate.touched">
+                            End date is required
+                        </div>  
+                        <div class="alert alert-danger fadeIn" *ngIf="endDate.errors?.invalidEndDatePeriod">
+                            End date can not be before or equal to the start date
+                        </div> 
+                        <div class="alert alert-danger fadeIn" *ngIf="endDate.errors?.invalidEndDate">
+                            Invalid end date
+                        </div>  
+                    </div>
+                </ng-container>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label>Choose Group Type</label>
+                    <select formControlName="groupType" id="inputState" class="form-control">
+                        <option value="" disabled selected>Group Type</option>
+                        <option *ngFor="let type of groupTypes">{{type}}</option>
+                    </select>
+                    <div class="alert alert-danger fadeIn" *ngIf="f.groupType.errors?.required && f.groupType.touched">
+                        Group type is required
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 form-group">
+                    <label for="End date">Image Address</label>
+                    <input type="imgPath" formControlName="imgPath" name="imgPath" class="form-control" id="imgPath" placeholder="Img address">
+                    <div class="alert alert-danger fadeIn" *ngIf="f.imgPath.errors?.required && f.imgPath.touched">
+                         Image is required
+                    </div>  
+                    <!-- <div class="alert alert-danger fadeIn" *ngIf="endDate.errors?.invalidEndDatePeriod">
+                        End date can not be before or equal to the start date
+                    </div> 
+                    <div class="alert alert-danger fadeIn" *ngIf="endDate.errors?.invalidEndDate">
+                        Invalid end date
+                    </div>   -->
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea formControlName="description" class="form-control" name="message" placeholder="Describe your trip idea ..."></textarea>
+                <div class="alert alert-danger fadeIn" *ngIf="f.description.errors?.required && f.description.touched">
+                    Description is required
+                </div>
+                <div class="alert alert-danger fadeIn" *ngIf="f.description.errors?.minlength && f.description.touched">
+                    Description can not be less than 10 symbols
+                </div>
+                <div class="alert alert-danger fadeIn" *ngIf="f.description.errors?.maxlength && f.description.touched">
+                    Description can not be more than 5000 symbols
+                </div>
+            </div>
+            <button type="submit" [disabled]="formIsValid" class="btn btn-primary float-right mt-3">Book a Table</button>
+        </form>
+    </div>
+</section>
