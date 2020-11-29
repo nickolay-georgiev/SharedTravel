@@ -1,0 +1,21 @@
+<div class="col-md-4">
+    <div class="wrapper">
+      <div class="clash-card barbarian">
+        <div class="clash-card__image clash-card__image--barbarian">
+          <img src={{trip.imgPath}} alt="barbarian" />
+        </div>
+        <div class="clash-card__level clash-card__level--barbarian">{{trip.country}}</div>
+        <div class="clash-card__unit-name">{{trip.city | titlecase}}</div>
+        <div class="clash-card__unit-description">    
+          <button [routerLink]="['/trip/list', trip.id]" class="btn btn-sm btn-default float-right details-button">Details</button>
+        </div>
+  
+        <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+          <div class="card-footer">
+            <div class="stat">{{trip.duration.startDate | date:'MM-dd-yyyy'}}</div>
+            <div class="stat-value">Start Date</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -4,6 +4,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { TripCreateComponent } from './components/trip/trip-create/trip-create.component';
+import { TripListComponent } from './components/trip/trip-list/trip-list.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'user', component: UserProfileComponent },
   { path: 'user/edit', component: UserProfileComponent },
   { path: 'trip/create', component: TripCreateComponent },
+  { path: 'trip/list', component: TripListComponent },
 ];
 
 @NgModule({

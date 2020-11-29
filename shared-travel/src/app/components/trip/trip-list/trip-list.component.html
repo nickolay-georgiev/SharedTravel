@@ -1,0 +1,25 @@
+<div class="hero-wrap"
+  style="background-image:url(https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/images%2Fdownload.webp?alt=media&token=56936ada-7797-4675-8159-1f9c1f9381cd)">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+      <div
+        class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center fadeInUp ftco-animated">
+      </div>
+    </div>
+    <span class="mask bg-gradient-default opacity-8"></span>
+  </div>
+</div>
+
+
+<div class="container">
+  <section class="text-center">    
+    <h4 class="mb-5"><strong>Latest posts</strong></h4>
+    <mat-paginator [length]="20" [(pageSize)]="initialPageSize" [pageIndex]="page" [pageSizeOptions]="[1, 5, 10]"
+    (page)="setPaginatorData($event)">
+  </mat-paginator>
+    <div class="row" *ngIf="trips">      
+      <app-trip *ngFor="let trip of data" [trip]="trip"></app-trip>
+    </div>
+  </section>
+</div>

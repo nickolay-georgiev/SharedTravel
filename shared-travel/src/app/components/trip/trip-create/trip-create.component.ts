@@ -36,7 +36,7 @@ export class TripCreateComponent implements OnInit {
   }
 
   submitTripForm() {
-    let creatorId = this.userService.currentUserId;    
+    let creatorId = this.userService.currentUserId;
     let trip = Object.assign({ creator: creatorId, members: [] }, this.tripForm.value);
     this.tripService.createTrip(trip);
     this.tripForm.reset();
@@ -57,5 +57,5 @@ export class TripCreateComponent implements OnInit {
   get endDate() {
     return this.tripForm.get('duration')['controls'].endDate;
   }
-
+  
 }
