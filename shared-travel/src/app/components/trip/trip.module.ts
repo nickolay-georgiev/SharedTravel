@@ -8,6 +8,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TripComponent } from './trip/trip.component';
+import { TripDetailComponent } from './trip-detail/trip-detail.component';
+import { TripEditComponent } from './trip-edit/trip-edit.component';
+import { TripMembersComponent } from './trip-members/trip-members.component';
 
 
 @NgModule({
@@ -15,6 +18,9 @@ import { TripComponent } from './trip/trip.component';
     TripCreateComponent,
     TripListComponent,
     TripComponent,
+    TripDetailComponent,
+    TripEditComponent,
+    TripMembersComponent,
   ],
   imports: [
     CommonModule,

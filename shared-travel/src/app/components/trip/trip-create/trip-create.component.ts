@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { startDateValidator, endDateValidator } from 'src/app/core/custom-form-validation-functions/date-validators';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { TripService } from 'src/app/core/services/trip.service';
-import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-trip-create',
@@ -16,7 +16,11 @@ export class TripCreateComponent implements OnInit {
 
   testDate: number;
 
-  constructor(private fb: FormBuilder, private tripService: TripService, private userService: UserService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private tripService: TripService, 
+    private authService: AuthService,
+    ) { }
 
   ngOnInit(): void {
     this.groupTypes = ['Males only', 'Females only', 'Males and Females']
@@ -35,8 +39,8 @@ export class TripCreateComponent implements OnInit {
     })
   }
 
-  submitTripForm() {
-    let creatorId = this.userService.currentUserId;
+  submitTripForm(): void {
+    let creatorId = this.authService.currentUserId;    
     let trip = Object.assign({ creator: creatorId, members: [] }, this.tripForm.value);
     this.tripService.createTrip(trip);
     this.tripForm.reset();
@@ -56,6 +60,5 @@ export class TripCreateComponent implements OnInit {
 
   get endDate() {
     return this.tripForm.get('duration')['controls'].endDate;
-  }
-  
+  }  
 }

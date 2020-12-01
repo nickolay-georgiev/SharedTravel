@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  register() {
+  register(): void {
     let email = this.f.email.value;
     let pass = this.f.password.value;
     this.authService.signUp(email, pass, this.registerForm.value);

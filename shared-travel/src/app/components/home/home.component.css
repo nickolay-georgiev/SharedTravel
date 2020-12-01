@@ -11,6 +11,12 @@
     position: relative;
 }
 
+.mb-5 {
+    font-size: 25px;
+    letter-spacing: 15px;
+    font-weight: lighter;
+}
+
 .header>h1 {
     position: absolute;
     display: block;
@@ -61,4 +67,19 @@
     -webkit-animation-duration: 1s;
     -moz-animation-duration: 1s;
     animation-duration: 1s;
+}
+
+
+.card-wrapper{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+
+app-home-page-trip{
+    flex-basis: 30%;
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px 5px #ccc;
 }

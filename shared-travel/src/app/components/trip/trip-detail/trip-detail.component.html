@@ -1,0 +1,47 @@
+<div class="col-md-4" *ngIf="trip">
+    <div class="wrapper">
+      <div class="clash-card barbarian">
+        <div id="background-card-header" class="clash-card__image clash-card__image--barbarian">
+          <img id="picture" src={{trip.imgPath}} alt="barbarian" />
+        </div>
+        <div class="clash-card__level clash-card__level--barbarian">{{trip.country}}
+        <button [routerLink]="['../']" id="back" class="btn btn-sm btn-default group-join">Back</button>
+        <app-trip-edit *ngIf="isCreator" id="edit-trip" [trip]="trip" (leaveTripEmitter)="leaveTrip($event)" (deleteTripEmitter)="deleteTrip($event)" (editTripEmitter)="updateTripDetails($event)"></app-trip-edit>
+        </div>
+        <div class="clash-card__unit-name">{{trip.city | titlecase}}</div>
+        <div class="clash-card__unit-description">
+          {{trip.description}}
+        </div>
+        <button *ngIf="!isCreator && !isTripMember && trip.groupSize > trip.members.length" (click)="joinTrip()" class="btn btn-sm btn-default group-join">Join this group</button>
+        <button *ngIf="!isCreator && isTripMember" (click)="leaveTrip()" class="btn btn-sm btn-default group-join leave">Leave this group</button>
+        <button [routerLink]="['/trip/list']" *ngIf="!isTripMember && !isCreator && trip.groupSize === trip.members.length" class="btn btn-sm btn-default group-join leave">Sorry this group is full</button>
+        <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">
+          <div class="one-third">
+            <div class="stat">{{trip.duration.startDate | date: 'dd/MM/yyyy'}}</div>
+            <div class="stat-value">Start Date</div>
+          </div>
+          <div class="one-third">
+            <div class="stat">{{trip.members.length}} / {{trip.groupSize}}</div>
+            <div class="stat-value">Joined members  /  total</div>
+          </div>
+  
+          <div class="one-third">
+            <div class="stat">{{trip.groupType}}</div>
+            <div class="stat-value">Group Type</div>
+          </div>
+  
+          <div class="one-third no-border">
+            <div class="stat">{{trip.duration.endDate | date: 'dd/MM/yyyy'}}</div>
+            <div class="stat-value">End Date</div>
+          
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <h1>Trip Members</h1>
+  <div class="user-wrapper">
+    <app-trip-members *ngFor="let user of tripMembers" [user]="user"></app-trip-members>
+  </div>

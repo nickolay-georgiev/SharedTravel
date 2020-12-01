@@ -1,0 +1,86 @@
+div.col-md-4 {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+}
+
+div.clash-card.barbarian {
+    width: 800px;
+}
+
+#picture {
+    object-fit: cover;
+}
+
+#background-card-header {
+    background-color: turquoise;
+}
+
+.clash-card__unit-name {
+    font-size: 42px;
+    margin: 30px 0 10px;
+}
+
+.clash-card__level {
+    font-size: 22px;
+    position: relative;
+}
+
+div.clash-card__unit-stats div.one-third {
+    width: 25%;
+}
+
+.clash-card__image {
+    height: 330px;
+}
+
+button.details-button {
+    margin: 0;
+    float: none !important;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    padding: 8px 40px;
+    left: unset;
+}
+
+div.clash-card__unit-description {
+    margin-bottom: 0;
+}
+
+button.group-join {
+    font-size: 0.8rem;
+    margin-bottom: -6px;
+}
+
+#edit-trip {
+    position: absolute;
+    top: 0;
+    right: -32px;
+    font-size: 0.8rem;    
+}
+
+button.leave, div.leave{
+    background-color: #f04646 !important
+}
+
+button#back{
+    position: absolute;
+    left: -30px;
+    width: 130px;
+}
+
+button#back:hover {
+    background-color: #365690 !important;
+}
+
+.user-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    
+}

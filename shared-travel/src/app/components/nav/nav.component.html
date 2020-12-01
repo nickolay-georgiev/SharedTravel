@@ -20,16 +20,16 @@
                     <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" routerLink="/trip/list">Trip List</a>
                 </li>
-                <!-- Navbar dropdown -->
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         Dropdown
-                    </a>
+                    </a> -->
                     <!-- Dropdown menu -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
                         <li>
@@ -38,7 +38,7 @@
                         <li>
                             <a class="dropdown-item" href="#">Something else here</a>
                         </li>
-                    </ul>
+                    </ul> -->
                 </li>
             </ul>
             <!-- Left links -->
@@ -51,15 +51,15 @@
                 <!-- Bus -->
                 <!-- Notification dropdown -->
                 <li class="nav-item dropdown mr-3 mr-lg-0">
-                    <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+                    <a class="nav-link dropdown-toggle hidden-arrow" id="navbarDropdownMenuLink" role="button"
                         data-toggle="dropdown" aria-expanded="false">
                         <span>Dropdoun</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Some news</a></li>
-                        <li><a class="dropdown-item" href="#">Another news</a></li>
+                        <li><a class="dropdown-item">Some news</a></li>
+                        <li><a class="dropdown-item">Another news</a></li>
                         <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item">Something else here</a>
                         </li>
                     </ul>
                 </li>
@@ -79,16 +79,13 @@
                 </ng-container>
                 <!-- Avatar -->
                 <li *ngIf="isLoggedIn" class="nav-item dropdown mr-4">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
-                        role="button" data-toggle="dropdown" aria-expanded="false">
-                        <ng-container *ngIf="(user$ | async) as user">
-                        <img src={{user.imgUrl}} class="rounded-circle"
-                            height="22" alt="" loading="lazy" />
-                        </ng-container>
+                    <a *ngIf="(user$ | async) as user" class="nav-link dropdown-toggle d-flex align-items-center"
+                        id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <img src={{user.imgUrl}} class="rounded-circle" height="22" alt="user avatar" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" routerLink="/user">My profile</a></li>
-                        <li><a class="dropdown-item" routerLink="/trip/create">Settings</a></li>
+                        <li><a class="dropdown-item" routerLink="/user/profile">My Profile</a></li>
+                        <li><a class="dropdown-item" routerLink="/trip/create">Create Trip</a></li>
                         <li><a class="dropdown-item" (click)="logoutHandler()">Logout</a></li>
                     </ul>
                 </li>

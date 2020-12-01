@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IUser } from 'src/app/core/interfaces/User';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,20 +9,19 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-
+ 
   user$: Observable<IUser>;
-  constructor(private authService: AuthService, private userService: UserService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.user$ = this.userService.getUserData();
-  }   
+    this.user$ = this.authService.getUserData();
+  }
 
-  logoutHandler(){
+  logoutHandler(): void {
     this.authService.signOut();
   }
 
-  get isLoggedIn(): boolean {   
+  get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
-
 }

@@ -1,0 +1,232 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background: #ccc;
+    overflow: hidden;
+  }
+  
+  .modal-container {
+    padding-top: 0px;
+    position: relative;
+    width: 160px;
+  }
+  
+  .modal-container .modal-btn {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    width: 130px;
+    height: 33px;
+    line-height: 33px;
+    background: #2bbbad;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 5px 5px -5px #333;
+    transition: background 0.3s ease-in;
+  }
+  
+  .modal-container .modal-btn:hover {
+    background: #365690;
+  }
+  
+  .modal-container .modal-content, .modal-container .modal-backdrop {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in;
+  }
+  
+  .modal-container .modal-close {
+    color: #aaa;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding-top: 3px;
+    background: #fff;
+    font-size: 16px;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .modal-container .modal-close:hover {
+    color: #333;
+  }
+  
+  .modal-container .modal-content-btn {
+    position: absolute;
+    text-align: center;
+    cursor: pointer;
+    bottom: 20px;
+    right: 30px;
+    background: #446cb3;
+    color: #fff;
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 14px;
+    padding-top: 9px;
+    font-weight: normal;
+  }
+  
+  .modal-container .modal-content-btn:hover {
+    color: #fff;
+    background: #365690;
+  }
+  
+  .modal-container #modal-toggle {
+    display: none;
+  }
+  
+  .modal-container #modal-toggle.active~.modal-backdrop, .modal-container #modal-toggle:checked~.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+  }
+  
+  .modal-container #modal-toggle.active~.modal-content, .modal-container #modal-toggle:checked~.modal-content {
+    opacity: 1;
+    background-color: #fff;
+    margin-top: 20px;
+    max-width: 1000px;
+    width: 1000px;
+    height: 500px;
+    padding: 10px 30px;
+    position: fixed;
+    left: calc(50% - 500px);
+    top: 12%;
+    border-radius: 4px;
+    z-index: 999;
+    pointer-events: auto;
+    cursor: auto;
+    visibility: visible;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+  }
+  
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button-label {
+    background: #446cb3;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    box-shadow: 0px 7px 18px 3px #968f8f;
+  }
+  
+  .button-label:hover {
+    cursor: pointer;
+    background-color: #365690;
+  }
+  
+  .form-group {
+    margin: 0;
+  }
+  
+  .modal-btn {
+    padding: 0;
+  }
+  
+  label.modal-btn {
+    text-transform: uppercase !important;
+  }
+  
+  @media (max-width: 400px) {
+    .modal-container #modal-toggle.active~.modal-content, .modal-container #modal-toggle:checked~.modal-content {
+      left: 0;
+    }
+  }
+  
+  #book-a-table {
+    background-color: #FAFAFA;
+    padding: 50px 0px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin: 50px 0px;
+    float: left;
+    width: 100%;
+  }
+  
+  .book-a-table p {
+    color: #9a9a9a;
+  }
+  
+  .book-a-table textarea {
+    min-height: 200px;
+    max-width: 100%;
+  }
+  
+  div.col-lg-4 {
+    position: relative;
+  }
+  
+  div.alert {
+    position: relative;
+    top: 20px;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+  }
+  
+  div.modal-content {
+    overflow: auto !important;
+  }
+  
+  textarea#textarea {
+    height: 150px !important;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+  
+  label#apply-btn {
+    bottom: 8px;
+    width: 150px;
+  }
+  
+  .col-lg-4.col-md-6.form-group {
+    margin-top: 10px;
+  }
+  
+  label#delete-btn {
+    width: 130px;
+    left: 30px;
+    bottom: 7px;
+    background-color: tomato;
+  }
+  
+  .disabled {
+    pointer-events: none;
+    display: none;
+  }
+  
+  label.start-trip {
+    width: 550px !important;
+    left: 210px !important;
+  }
+  
+  #city, #country {
+    text-transform: capitalize;
+  } 

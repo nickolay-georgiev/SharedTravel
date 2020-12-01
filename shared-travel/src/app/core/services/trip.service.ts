@@ -1,36 +1,27 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Params, Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
+
 import { Observable, of, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ITrip } from '../interfaces/Trip';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TripService {
+  
   trips: ITrip[] = [];
-  test: any;
 
   constructor(public db: AngularFirestore, private router: Router) { }
-
-  filterFunctions = {
-    'Males only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Males only'),
-    'Females only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Females only'),
-    'Males and Females': (trips: ITrip[]): ITrip[] => trips,
-    'Filter By': (trips: ITrip[]): ITrip[] => trips,
-  }
 
   createTrip(trip: ITrip) {
     trip.country = trip.country.toLowerCase();
     trip.city = trip.city.toLowerCase();
-    trip.duration.startDate = new Date(trip.duration.startDate);
-    trip.duration.endDate = new Date(trip.duration.endDate);
     return this.db.collection<ITrip>('trips').add(trip)
       .then((data) => {
-        // this.snackbar.open('Question added!', 'Undo', {
-        //   duration: 2000
-        // });
+        
         this.router.navigate(['/user/trip']);
       })
       .catch((err) => {
@@ -38,9 +29,69 @@ export class TripService {
       });;
   }
 
+  // getUsersById(users) {
+  //   this.db.collection('users', ref => ref
+  //     .where('__name__', 'in', users))
+  //     .snapshotChanges()
+  //     .subscribe(res => {
+  //       debugger
+  //     })
+  // }
+
+  getTripById(tripId: string): Observable<any> {
+    return this.db.collection<ITrip>('trips').doc(tripId).snapshotChanges()
+      .pipe(
+        switchMap((params: Params) => {
+          if (!params) {
+            console.log("No Data Available");
+          }
+          let id = params.payload.id;
+          let members = params.payload.data().members;
+          if (members.length == 0) { members.push('empty') };
+          return forkJoin([of({ id, ...params.payload.data() }),
+          this.db.collection('users', ref => ref
+            .where('__name__', 'in', members))
+            .get()])
+        }
+        ))
+
+  }
+  
+  updateTrip(id: string, trip) {
+    return this.db.collection<ITrip>('trips').doc(id).update(trip);
+  }
+
+  deleteTrip(id: string) {
+    return this.db.collection<ITrip>('trips').doc(id).delete().then(() => {
+      //this.trip = null;
+      this.router.navigate(['/trip/list'])
+    });;
+  }  
+
   getAllTrips(): Observable<ITrip[]> {
     return this.db.collection<ITrip>('trips', ref => ref
-      .orderBy('duration.startDate', 'asc'))
+      .orderBy('duration.startDate', 'desc'))
+      .snapshotChanges()
+      .pipe(map(response => {
+        if (!response.length) {
+          console.log("No Data Available");
+        }
+        this.trips = [];
+        for (let item of response) {
+          const trip = item.payload.doc.data();
+          trip.id = item.payload.doc.id;
+          this.trips.push(trip);
+        }
+        return this.trips;
+
+      }, error => {
+      }));
+  }
+
+  getTripsForHomePage(): Observable<ITrip[]> {
+    return this.db.collection<ITrip>('trips', ref => ref
+      .orderBy('duration.startDate', 'asc')
+      .limit(6))
       .snapshotChanges()
       .pipe(map(response => {
         if (!response.length) {

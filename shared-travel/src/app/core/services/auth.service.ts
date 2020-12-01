@@ -1,50 +1,75 @@
 import { Router } from "@angular/router";
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { IUser } from '../interfaces/User';
 
+import { Observable, of, Subscription } from 'rxjs';
+import { switchMap, take } from 'rxjs/operators';
+import { IUser } from '../interfaces/User';
 
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthService {  
+export class AuthService implements OnDestroy {
+
+  userId: string;
+  email: string;
+  isLogged: boolean = false;
+  subscriptions: Subscription[] = [];
 
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
-  ) { }
+  ) {
+    this.subscriptions.push(this.afAuth.user.subscribe((data => {
+      if (data) {
+        this.userId = data.uid;
+        this.email = data.email;
+        this.isLogged = true;
+      }
+    })));
+  }
 
   setUser(): void {
-    this.afAuth.authState.subscribe(user => {
-      if (user) { 
+    this.subscriptions.push(this.afAuth.authState.subscribe(user => {
+      if (user) {
         localStorage.setItem('user', user.uid);
       }
-    })
+    }))
+  }
+
+
+  getUserData(): Observable<IUser> {
+    // return this.afAuth.onAuthStateChanged(user => ....);
+    return this.afAuth.user.pipe(switchMap(user => {
+      this.userId = user.uid;
+      return this.afs
+        .doc<IUser>('users/' + user.uid)
+        .valueChanges();
+    }))
   }
 
   signIn(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((res) => {
-        console.log(res);       
         this.setUser();
         this.router.navigate(['/home']);
       }).catch((error) => {
-        window.alert(error.message)
+        console.log(error);
       })
   }
 
   signUp(email: string, password: string, user: IUser) {
     return this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((result) => {        
+      .then((result) => {
         user = Object.assign(user, { uid: result.user.uid });
         this.setUserData(user);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
       }).catch((error) => {
-        window.alert(error.message)
+        console.log(error);
       })
   }
 
@@ -57,14 +82,26 @@ export class AuthService {
       })
   }
 
+  get currentUserId() {
+    return this.userId;
+  }
+
+  get userEmail() {
+    return this.email;
+  }
+
   get isLoggedIn(): boolean {
-    const user = localStorage.getItem('user');
-    return !!user;
+    return this.isLogged;
   }
 
   private setUserData(user) {
-    const userRef: AngularFirestoreDocument<IUser> = this.afs.doc(`users/${user.uid}`);
+    let avatar = 'https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/images%2Fmale-avatar.png?alt=media&token=adde1893-9f70-4ee9-aa9d-dfe258073828';
+    if (user.gender === 'Female') {
+      avatar = 'https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/images%2Ffemale-avatar-12-774634.webp?alt=media&token=231131f9-fc7b-413c-b4ff-222a8dd1a7c5';
+    }
 
+    this.afs.collection('users-messages').doc(user.uid).set({ 'notifications': [] });
+    const userRef: AngularFirestoreDocument<IUser> = this.afs.doc(`users/${user.uid}`);
     const userState: IUser = {
       uid: user.uid,
       firstName: user.firstName,
@@ -72,13 +109,13 @@ export class AuthService {
       email: user.email,
       gender: user.gender,
       city: user.city,
-      country: user.country,   
+      country: user.country,
       username: user.email,
-      aboutMe: '',  
+      aboutMe: '',
       age: null,
       university: null,
       education: null,
-      imgUrl: 'https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/images%2Ffemale-avatar.jpg?alt=media&token=8a949dd8-a782-4f8e-ac51-25cdff2cb598',
+      imgUrl: avatar
     }
     return userRef.set(userState, {
       merge: true
@@ -86,9 +123,14 @@ export class AuthService {
   }
 
   signOut() {
-    return this.afAuth.signOut().then(() => {
+    this.afAuth.signOut().then((res) => {
+      this.isLogged = false;
       localStorage.removeItem('user');
       this.router.navigate(['/home']);
     })
-  } 
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(x => x.unsubscribe())
+  }
 }
