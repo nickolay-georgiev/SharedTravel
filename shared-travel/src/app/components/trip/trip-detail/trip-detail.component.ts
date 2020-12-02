@@ -35,7 +35,6 @@ export class TripDetailComponent implements OnInit {
     this.userId = this.authService.currentUserId;
     this.tripId = this.route.snapshot.params.id;
 
-
     this.tripService.getTripById(this.tripId).subscribe(([trip, members]) => {
       this.trip = trip;
       if (this.trip) {

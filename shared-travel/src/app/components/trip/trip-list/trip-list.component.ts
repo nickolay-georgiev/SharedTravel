@@ -41,6 +41,15 @@ export class TripListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
+  getByFilters(form: { country: string, city: string, filterBy: string }) {
+    this.tripService.getTripsByFilter(form).subscribe(res => {
+      this.trips = res;
+      this.dataSource.data = this.trips;
+      this.initialPageSize = this.paginator.pageSize;
+      this.setPaginatorData({ pageIndex: this.page, pageSize: this.initialPageSize });
+    });
+  }
+
   setPaginatorData(obj: { pageIndex: number, pageSize: number }) {
     let index = 0,
       startingIndex = obj.pageIndex * obj.pageSize,

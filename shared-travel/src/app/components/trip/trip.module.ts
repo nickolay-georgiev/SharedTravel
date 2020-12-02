@@ -5,13 +5,11 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TripListComponent } from './trip-list/trip-list.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
 import { TripComponent } from './trip/trip.component';
 import { TripDetailComponent } from './trip-detail/trip-detail.component';
 import { TripEditComponent } from './trip-edit/trip-edit.component';
 import { TripMembersComponent } from './trip-members/trip-members.component';
-
+import { TripSearchFormComponent } from './trip-search-form/trip-search-form.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +19,13 @@ import { TripMembersComponent } from './trip-members/trip-members.component';
     TripDetailComponent,
     TripEditComponent,
     TripMembersComponent,
+    TripSearchFormComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    MatTableModule,
     MatPaginatorModule,
-    MatSortModule,
   ]
 })
 export class TripModule { }

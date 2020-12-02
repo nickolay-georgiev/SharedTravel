@@ -97,7 +97,7 @@
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-username">Username</label>
-                          <input type="text" appReadOnly id="input-username"
+                          <input id="usernameInput" ngClass="testClass" type="text" disabled appReadOnly id="input-username"
                             class="form-control form-control-alternative" placeholder="Username"
                             [value]="(user.email | transformUsername)">
                         </div>
@@ -131,7 +131,8 @@
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">Age</label>
                           <input type="text" appReadOnly formControlName="age"
-                            class="form-control form-control-alternative" placeholder="Age" [value]="user.age">
+                            class="form-control form-control-alternative" placeholder="Age"
+                            [value]="user.age">
                         </div>
                       </div>
                       <div class="col-lg-6">

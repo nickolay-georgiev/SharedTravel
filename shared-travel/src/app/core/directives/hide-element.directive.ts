@@ -16,14 +16,14 @@ export class HideElementDirective {
     const url = this.route.url;
     const el = this.elementRef.nativeElement;
 
-    if (url.endsWith('user') && el.textContent === 'Save Changes'){
+    if (url.endsWith('user/profile') && el.textContent === 'Save Changes'){
       this.renderer2.setStyle(el, 'display', 'none');
     }
 
-    if(url.endsWith('edit') && el.textContent === 'Edit profile' )
+    if(url.endsWith('user/edit') && el.textContent === 'Edit profile' )
     this.renderer2.setStyle(el, 'display', 'none');
 
-    if(url.endsWith('user') && el.textContent === 'Change Photo' )
+    if(url.endsWith('user/profile') && el.textContent === 'Change Photo' )
     this.renderer2.setStyle(el, 'display', 'none');
   }
 }

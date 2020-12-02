@@ -10,12 +10,14 @@ import { AuthModule } from './components/auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { UserModule } from './components/user/user.module';
 import { TripModule } from './components/trip/trip.module';
+import { HomePageTripComponent } from './components/home-page-trip/home-page-trip.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
+    HomePageTripComponent,
   ],
   imports: [
     BrowserModule,

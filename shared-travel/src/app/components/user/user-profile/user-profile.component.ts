@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Subscription } from 'rxjs';
 import { IUser } from 'src/app/core/interfaces/User';
-import { AuthService } from 'src/app/core/services/auth.service';
 
+import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
@@ -25,10 +26,9 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
     this.userDataSubscriptions.push(this.authService.getUserData().subscribe(user => {
       this.user = user;
-
+     
       this.editForm = this.fb.group({
         firstName: [this.user.firstName, [Validators.nullValidator]],
         lastName: [this.user.lastName, [Validators.nullValidator]],

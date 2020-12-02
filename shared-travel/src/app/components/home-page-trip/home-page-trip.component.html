@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+        <img src={{trip.imgPath}} class="img-fluid" />
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{trip.country | titlecase}}</h5>
+        <p class="card-text">
+            {{trip.description | slice : 0 : 20}} ...
+        </p>
+        <a [routerLink]="['/trip/list', trip.id]" class="btn btn-primary">Learn More</a>
+    </div>
+</div>

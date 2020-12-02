@@ -2,13 +2,11 @@
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-md-8 offset-md-2 text-center">
-                <h2 class="text-primary">Book A Table</h2>
-                <p class="mb-5">Bootstrap table reservation form template design is created by using bootstrap where
-                    users can book online restaurant tables, food orders according to yourself.</p>
+                <h1 class="text-primary">CREATE TRIP</h1>
             </div>
         </div>
 
-        <form [formGroup]="tripForm" (submit)="submitTripForm()"> 
+        <form [formGroup]="tripForm" (ngSubmit)="submitTripForm()">
             <div class="form-row">
                 <div class="col-lg-4 col-md-6 form-group">
                     <label for="Country">Country</label>
@@ -114,7 +112,7 @@
                     Description can not be more than 5000 symbols
                 </div>
             </div>
-            <button type="submit" [disabled]="formIsValid" class="btn btn-primary float-right mt-3">Book a Table</button>
+            <button type="submit" [disabled]="formIsValid" class="btn btn-primary float-right mt-3">Create</button>
         </form>
     </div>
 </section>

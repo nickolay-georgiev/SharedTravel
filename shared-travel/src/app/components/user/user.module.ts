@@ -8,7 +8,6 @@ import { CoreModule } from 'src/app/core/core.module';
 import { UserUploadPhotoComponent } from './user-upload-photo/user-upload-photo.component';
 
 
-
 @NgModule({
   declarations: [
     UserProfileComponent,

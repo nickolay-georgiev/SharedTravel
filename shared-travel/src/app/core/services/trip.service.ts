@@ -16,6 +16,13 @@ export class TripService {
 
   constructor(public db: AngularFirestore, private router: Router) { }
 
+  filterFunctions = {
+    'Males only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Males only'),
+    'Females only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Females only'),
+    'Males and Females': (trips: ITrip[]): ITrip[] => trips,
+    'Filter By': (trips: ITrip[]): ITrip[] => trips,
+  }
+
   createTrip(trip: ITrip) {
     trip.country = trip.country.toLowerCase();
     trip.city = trip.city.toLowerCase();
@@ -28,15 +35,6 @@ export class TripService {
         console.log(err);
       });;
   }
-
-  // getUsersById(users) {
-  //   this.db.collection('users', ref => ref
-  //     .where('__name__', 'in', users))
-  //     .snapshotChanges()
-  //     .subscribe(res => {
-  //       debugger
-  //     })
-  // }
 
   getTripById(tripId: string): Observable<any> {
     return this.db.collection<ITrip>('trips').doc(tripId).snapshotChanges()
@@ -107,5 +105,49 @@ export class TripService {
 
       }, error => {
       }));
+  }
+
+  getTripsByFilter(form: { country: string, city: string, filterBy: string }): Observable<ITrip[]> {
+    let country = form.country.toLowerCase().trim();
+    let city = form.city.toLowerCase().trim();
+    let filterBy = form.filterBy;
+
+    if (!country && !city && filterBy === 'Filter By') { return of(this.trips) };
+    if (!country && !city && filterBy) { return of(this.filterFunctions[filterBy](this.trips)) }
+
+    return this.searchOptions(country, city)
+      .pipe(map(response => {
+        if (!response.length) {
+          console.log("No Data Available");
+        }
+        this.trips = [];
+        for (let item of response) {
+          const trip = item.payload.doc.data() as ITrip;
+          trip.id = item.payload.doc.id;
+          this.trips.push(trip);
+        }
+        return this.filterFunctions[filterBy](this.trips);
+      }, error => {
+      }));
+  }
+
+  searchOptions(country, city) {
+    if (country && city) {
+      return this.db.collection('trips', ref => {
+        return ref
+          .where('country', '==', country)
+          .where('city', '==', city)
+      }).snapshotChanges();
+    } else if (city && !country) {
+      return this.db.collection('trips', ref => {
+        return ref
+          .where('city', '==', city)
+      }).snapshotChanges();
+    } else if (country && !city) {
+      return this.db.collection('trips', ref => {
+        return ref
+          .where('country', '==', country)
+      }).snapshotChanges();
+    }
   }
 }
