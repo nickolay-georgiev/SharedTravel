@@ -1,0 +1,22 @@
+div.mat-elevation-z8 {
+    width: 80%;
+    margin: 150px auto;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    cursor: pointer;
+}
+
+.test {
+    width: 100px;
+    position: relative;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 11px;
+}

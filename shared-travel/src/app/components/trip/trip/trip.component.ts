@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ITrip } from 'src/app/core/interfaces/Trip';
+import { ITrip } from 'src/app/core/interfaces/trip';
 
 @Component({
   selector: 'app-trip',

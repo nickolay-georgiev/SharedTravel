@@ -1,0 +1,13 @@
+<mat-dialog-content class="mat-typography">
+    <div class="container contact-form">
+        <form [formGroup]="messageForm">
+            <h3>Drop Us a Message</h3>
+            <textarea formControlName="message" name="txtMsg" class="form-control" placeholder="Your Message *"
+                style="width: 100%; height: 150px;"></textarea>
+            <div class="buttons">
+                <button mat-button mat-dialog-close class="btn btn-primary">Cancel</button>
+                <button mat-button class="btn btn-primary" [mat-dialog-close]="messageForm">Send</button>
+            </div>
+        </form>
+    </div>
+</mat-dialog-content>

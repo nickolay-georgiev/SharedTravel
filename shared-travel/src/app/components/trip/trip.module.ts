@@ -10,6 +10,7 @@ import { TripDetailComponent } from './trip-detail/trip-detail.component';
 import { TripEditComponent } from './trip-edit/trip-edit.component';
 import { TripMembersComponent } from './trip-members/trip-members.component';
 import { TripSearchFormComponent } from './trip-search-form/trip-search-form.component';
+import { TripRoutingModule } from './trip-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TripSearchFormComponent } from './trip-search-form/trip-search-form.com
     RouterModule,
     ReactiveFormsModule,
     MatPaginatorModule,
+    TripRoutingModule
   ]
 })
 export class TripModule { }

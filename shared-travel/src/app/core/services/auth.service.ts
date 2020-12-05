@@ -4,8 +4,8 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { Observable, of, Subscription } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
-import { IUser } from '../interfaces/User';
+import { switchMap } from 'rxjs/operators';
+import { IUser } from '../interfaces/user';
 
 
 @Injectable({
@@ -40,8 +40,6 @@ export class AuthService implements OnDestroy {
       }
     }))
   }
-
-
   getUserData(): Observable<IUser> {
     // return this.afAuth.onAuthStateChanged(user => ....);
     return this.afAuth.user.pipe(switchMap(user => {
@@ -52,6 +50,15 @@ export class AuthService implements OnDestroy {
     }))
   }
 
+  // getUserData(): Observable<IUser> {
+  //   return this.afAuth.authState.pipe(switchMap(user => {
+  //     this.userId = user.uid;
+  //     return this.afs
+  //       .doc<IUser>('users/' + user.uid)
+  //       .valueChanges();
+  //   }))
+  // }
+
   signIn(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((res) => {
@@ -59,6 +66,7 @@ export class AuthService implements OnDestroy {
         this.router.navigate(['/home']);
       }).catch((error) => {
         console.log(error);
+        
       })
   }
 

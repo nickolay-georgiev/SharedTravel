@@ -1,0 +1,22 @@
+<div class="messages-wrapper">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    From: {{message.creator | transformUsername | uppercase}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{message.description | slice: 0: 20}} ...
+                </mat-panel-description>
+                <mat-panel-description>
+                    {{message.createdOn | date: 'dd/MM/yyyy, h:mm a'}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p>{{message.description}}</p>
+            <div class="buttons">
+                <button (click)="deleteMessage()" class="btn btn-primary">Delete</button>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+

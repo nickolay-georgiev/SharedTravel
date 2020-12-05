@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import firebase from 'firebase/app'
 
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
+
 import { AuthService } from './auth.service';
-import { IUser } from '../interfaces/User';
+import { IMessage } from '../interfaces/message';
+import { IUser } from '../interfaces/user';
 
 
 @Injectable({
@@ -43,8 +46,35 @@ export class UserService {
     );
   }
 
+  notifyUsers(members: string[], message: string) {
+    let date = new Date().toString();
+    members = members.filter(x => x !== this.userId);
+    members.forEach(member => {
+      this.afs.collection('users-messages').doc(member).update({
+        notifications: firebase.firestore.FieldValue.arrayUnion({
+          description: message, createdOn: date, creator: this.authService.userEmail
+        })
+      })
+    })
+  }
+
+  getUserMessages(): Observable<IMessage[]> {
+    return this.afs.collection<IMessage>('users-messages').doc(this.userId)
+      .snapshotChanges()
+      .pipe(map(res => {
+        return res.payload.data()['notifications'];
+      }))
+  }
+
+  deleteUserMessage(message: IMessage) {
+    this.afs.collection('users-messages').doc(this.userId).update({
+      notifications: firebase.firestore.FieldValue.arrayRemove(
+        message)
+    });
+  }
+
   private updateUserAvatar(imgUrl: string) {
-    this.afs.collection('users').doc(this.userId).update({ imgUrl: imgUrl }).then(() => {
+    this.afs.collection<IUser>('users').doc(this.userId).update({ imgUrl: imgUrl }).then(() => {
       this.router.navigate(['/user/edit']);
     });
   }

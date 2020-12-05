@@ -1,0 +1,14 @@
+div.messages-wrapper {
+    width: 60%;
+    margin: 0 auto;  
+}
+
+div.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+div.buttons button {
+    padding: 0.54rem 2.14rem;
+}

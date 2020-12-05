@@ -1,0 +1,53 @@
+body {
+    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+}
+
+.contact-form {
+    background: #fff;
+    margin-top: 10%;
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+.contact-form .form-control {
+    border-radius: 1rem;
+}
+.contact-form h3 {
+    margin-top: -8%;
+    text-align: center;
+    color: #0062cc;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+
+::ng-deep.mat-dialog-content {
+    width: 800px !important;
+    height: 350px !important;
+    overflow: hidden !important;
+}
+
+::ng-deep mat-dialog-container {
+    width: 800px !important;
+    padding-bottom: 0 !important;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    padding: 0.54rem 2.14rem;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 670px !important;
+    height: 200px !important;
+}
