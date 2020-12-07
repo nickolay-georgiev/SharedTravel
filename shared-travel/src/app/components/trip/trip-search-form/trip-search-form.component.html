@@ -1,23 +1,27 @@
 <section class="search-sec">
     <div class="container">
-        <form [formGroup]="searchForm" (submit)="submitSearchForm()" novalidate="novalidate">
+        <form [formGroup]="searchForm" (ngSubmit)="submitSearchForm()" novalidate="novalidate">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <input formControlName="country" type="text" class="form-control search-slt" placeholder="Enter Country">
+                            <input formControlName="country" type="text" class="form-control search-slt"
+                                placeholder="Enter Country">
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <input formControlName="city" type="text" class="form-control search-slt" placeholder="Enter City">
+                            <input formControlName="city" type="text" class="form-control search-slt"
+                                placeholder="Enter City">
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                            <select formControlName="filterBy" class="form-control search-slt" id="exampleFormControlSelect1">
+                            <select formControlName="filterBy" class="form-control search-slt"
+                                id="exampleFormControlSelect1">
                                 <option selected disabled>Filter By</option>
                                 <option *ngFor="let option of searchOptions">{{option}}</option>
                             </select>
                         </div>
-                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                        <div class="col-lg-3 col-md-3 col-sm-12 p-0 buttons-div">
                             <button type="submit" class="btn btn-danger wrn-btn">Search</button>
+                            <button (click)="resetForm()" class="btn btn-secondary wrn-btn reset">Reset</button>
                         </div>
                     </div>
                 </div>

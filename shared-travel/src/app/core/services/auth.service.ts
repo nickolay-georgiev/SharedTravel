@@ -1,11 +1,14 @@
 import { Router } from "@angular/router";
 import { Injectable, OnDestroy } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-import { Observable, of, Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
 import { IUser } from '../interfaces/user';
+import { snackBarError, snackBarInfo } from '../custom-functions/mat-snackbar-functions';
 
 
 @Injectable({
@@ -23,6 +26,7 @@ export class AuthService implements OnDestroy {
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     public router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.subscriptions.push(this.afAuth.user.subscribe((data => {
       if (data) {
@@ -33,40 +37,14 @@ export class AuthService implements OnDestroy {
     })));
   }
 
-  setUser(): void {
-    this.subscriptions.push(this.afAuth.authState.subscribe(user => {
-      if (user) {
-        localStorage.setItem('user', user.uid);
-      }
-    }))
-  }
-  getUserData(): Observable<IUser> {
-    // return this.afAuth.onAuthStateChanged(user => ....);
-    return this.afAuth.user.pipe(switchMap(user => {
-      this.userId = user.uid;
-      return this.afs
-        .doc<IUser>('users/' + user.uid)
-        .valueChanges();
-    }))
-  }
-
-  // getUserData(): Observable<IUser> {
-  //   return this.afAuth.authState.pipe(switchMap(user => {
-  //     this.userId = user.uid;
-  //     return this.afs
-  //       .doc<IUser>('users/' + user.uid)
-  //       .valueChanges();
-  //   }))
-  // }
-
   signIn(email: string, password: string) {
     return this.afAuth.signInWithEmailAndPassword(email, password)
       .then((res) => {
         this.setUser();
+        snackBarInfo("Successfully logged in.", this.snackBar);
         this.router.navigate(['/home']);
       }).catch((error) => {
-        console.log(error);
-        
+        snackBarError(error.message, this.snackBar);
       })
   }
 
@@ -75,31 +53,40 @@ export class AuthService implements OnDestroy {
       .then((result) => {
         user = Object.assign(user, { uid: result.user.uid });
         this.setUserData(user);
+        snackBarInfo("Successfully register.", this.snackBar);
         this.router.navigate(['/home']);
       }).catch((error) => {
-        console.log(error);
+        snackBarError(error.message, this.snackBar);
       })
   }
 
-  forgotPassword(passwordResetEmail) {
-    return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      }).catch((error) => {
-        window.alert(error)
-      })
+  signOut() {
+    this.afAuth.signOut().then(() => {
+      this.isLogged = false;
+      localStorage.removeItem('user');
+      snackBarInfo("Successfully logged out.", this.snackBar);
+      this.router.navigate(['/home']);
+    }).catch((error) => {
+      snackBarError(error.message, this.snackBar);
+    })
   }
 
-  get currentUserId() {
-    return this.userId;
+  setUser(): void {
+    this.subscriptions.push(this.afAuth.authState.subscribe(user => {
+      if (user) {
+        localStorage.setItem('user', user.uid);
+      }
+    }))
   }
 
-  get userEmail() {
-    return this.email;
-  }
-
-  get isLoggedIn(): boolean {
-    return this.isLogged;
+  getUserData(): Observable<IUser> {
+    // return this.afAuth.onAuthStateChanged(user => ....);
+    return this.afAuth.user.pipe(switchMap(user => {
+      this.userId = user.uid;
+      return this.afs
+        .doc<IUser>('users/' + user.uid)
+        .valueChanges();
+    }))
   }
 
   private setUserData(user) {
@@ -129,13 +116,17 @@ export class AuthService implements OnDestroy {
       merge: true
     })
   }
+  
+  get currentUserId() {
+    return this.userId;
+  }
 
-  signOut() {
-    this.afAuth.signOut().then((res) => {
-      this.isLogged = false;
-      localStorage.removeItem('user');
-      this.router.navigate(['/home']);
-    })
+  get userEmail() {
+    return this.email;
+  }
+
+  get isLoggedIn(): boolean {
+    return this.isLogged;
   }
 
   ngOnDestroy(): void {

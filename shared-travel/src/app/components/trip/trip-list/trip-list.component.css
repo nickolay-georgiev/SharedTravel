@@ -1,66 +1,70 @@
 div.row {
-    justify-content: space-around;
-  }
-  
-  h4 {
-    margin-top: 100px;
-  }
-  
-  button.btn-info {
-    background-color: #2BBBAD !important;
-    border-radius: 8px;
-  }
-  
-  .pagination-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .pagination-buttons b {
-    margin: 0 100px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  mat-paginator{
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-  
-  }
-  
-  ::ng-deep .mat-option-text,::ng-deep .mat-select-value-text {
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  
-  .hero-wrap, .img, .blog-img, .user-img {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  
-  .hero-wrap {
-    width: 100%;
-    height: 300px;
-    position: relative;
-    margin-top: 55px;
-  }
-  
-  .mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all .15s ease;
-  }
-  
-  .bg-gradient-default {
-    background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
-  }
-  
-  .opacity-8 {
-    opacity: .5 !important;
-  }
+  justify-content: space-around;
+}
+
+h4 {
+  padding-bottom: 31px;
+  font-size: 35px;
+  letter-spacing: 25px;
+  font-weight: 100;
+  border-bottom: 1px solid;
+}
+
+button.btn-info {
+  background-color: #2BBBAD !important;
+  border-radius: 8px;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-buttons b {
+  margin: 0 100px;
+  border-bottom: 1px solid #ccc;
+}
+
+mat-paginator{
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+
+}
+
+::ng-deep .mat-option-text,::ng-deep .mat-select-value-text {
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.hero-wrap, .img, .blog-img, .user-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero-wrap {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-top: 55px;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .15s ease;
+}
+
+.bg-gradient-default {
+  background: linear-gradient(87deg, #172b4d 0, #1a174d 100%) !important;
+}
+
+.opacity-8 {
+  opacity: .5 !important;
+}

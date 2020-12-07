@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { startDateValidator, endDateValidator } from 'src/app/core/custom-form-validation-functions/date-validators';
+import { endDateValidator, startDateValidator } from 'src/app/core/custom-functions/date-validators';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { TripService } from 'src/app/core/services/trip.service';
 

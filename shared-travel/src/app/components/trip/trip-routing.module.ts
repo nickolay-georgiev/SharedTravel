@@ -7,7 +7,10 @@ import { TripListComponent } from './trip-list/trip-list.component';
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'create' },
     { path: 'create', component: TripCreateComponent },
-    { path: 'list', component: TripListComponent },
+    {
+        path: 'list', component: TripListComponent,
+        data: { shouldReuseRoute: true }
+    },
     { path: 'list/:id', component: TripDetailComponent },
 ];
 

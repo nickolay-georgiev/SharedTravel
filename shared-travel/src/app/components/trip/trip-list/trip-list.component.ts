@@ -29,10 +29,8 @@ export class TripListComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(private tripService: TripService) { }
 
   ngOnInit(): void {
-    this.subscriptions.push(this.tripService.getAllTrips().subscribe(res => {
-      this.trips = res;
-      this.dataSource.data = this.trips;
-      this.setPaginatorData({ pageIndex: this.page, pageSize: this.initialPageSize });
+    this.subscriptions.push(this.tripService.getAllTrips().subscribe(response => {
+      this.setDataTest(response);
     }));
   }
 
@@ -50,6 +48,12 @@ export class TripListComponent implements OnInit, OnDestroy, AfterViewInit {
     });
   }
 
+  resetFormHandler(){
+    this.subscriptions.push(this.tripService.getAllTrips().subscribe(response => {
+      this.setDataTest(response);
+    }));
+  }
+
   setPaginatorData(obj: { pageIndex: number, pageSize: number }) {
     let index = 0,
       startingIndex = obj.pageIndex * obj.pageSize,
@@ -59,6 +63,12 @@ export class TripListComponent implements OnInit, OnDestroy, AfterViewInit {
       index++;
       return (index > startingIndex && index <= endingIndex) ? true : false;
     });
+  }
+
+  private setDataTest(response){
+    this.trips = response;
+    this.dataSource.data = this.trips;
+    this.setPaginatorData({ pageIndex: this.page, pageSize: this.initialPageSize });
   }
 
   ngOnDestroy(): void {

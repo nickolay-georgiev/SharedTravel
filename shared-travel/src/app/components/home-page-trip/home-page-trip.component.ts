@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ITrip } from 'src/app/core/interfaces/trip';
 
 @Component({
@@ -10,6 +10,7 @@ export class HomePageTripComponent {
 
   @Input()
   trip: ITrip;
-  constructor() { }
 
+  constructor() { }
+  
 }

@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Params, Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import firebase from 'firebase'
 
 import { Observable, of, forkJoin } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
-import firebase from 'firebase'
+
 import { ITrip } from '../interfaces/trip';
+import { AuthService } from './auth.service';
+import { snackBarError, snackBarInfo } from '../custom-functions/mat-snackbar-functions';
 
 
 @Injectable({
@@ -14,7 +18,12 @@ import { ITrip } from '../interfaces/trip';
 export class TripService {
   trips: ITrip[] = [];
 
-  constructor(public db: AngularFirestore, private router: Router) { }
+  constructor(
+    public db: AngularFirestore,
+    private router: Router,
+    private authService: AuthService,
+    private snackBar: MatSnackBar
+    ) { }
 
   filterFunctions = {
     'Males only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Males only'),
@@ -24,28 +33,19 @@ export class TripService {
   }
 
   createTrip(trip: ITrip) {
+    let creator = this.authService.currentUserId;
     trip.country = trip.country.toLowerCase();
     trip.city = trip.city.toLowerCase();
+    trip.members.push(creator);
     return this.db.collection<ITrip>('trips').add(trip)
-      .then((data) => {
-        // this.snackbar.open('Question added!', 'Undo', {
-        //   duration: 2000
-        // });
+      .then(() => {
+        snackBarInfo("Trip was successfully created.", this.snackBar);
         this.router.navigate(['/user/trip']);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        snackBarError(error.message, this.snackBar);
       });;
   }
-
-  // getUsersById(users) {
-  //   this.db.collection('users', ref => ref
-  //     .where('__name__', 'in', users))
-  //     .snapshotChanges()
-  //     .subscribe(res => {
-  //       debugger
-  //     })
-  // }
 
   getTripById(tripId: string): Observable<any> {
     return this.db.collection<ITrip>('trips').doc(tripId).snapshotChanges()
@@ -109,9 +109,8 @@ export class TripService {
 
   deleteTrip(id: string) {
     return this.db.collection<ITrip>('trips').doc(id).delete().then(() => {
-      //this.trip = null;
       this.router.navigate(['/trip/list'])
-    });;
+    });
   }
 
   getTripsByFilter(form: { country: string, city: string, filterBy: string }): Observable<ITrip[]> {
@@ -138,8 +137,6 @@ export class TripService {
       }));
   }
 
-  // ----------------------------------------------------------------------------------------
-
   getTripsForHomePage(): Observable<ITrip[]> {
     return this.db.collection<ITrip>('trips', ref => ref
       .orderBy('duration.startDate', 'asc')
@@ -156,8 +153,8 @@ export class TripService {
           this.trips.push(trip);
         }
         return this.trips;
-
       }, error => {
+        snackBarError(error.message, this.snackBar);
       }));
   }
 
@@ -176,8 +173,8 @@ export class TripService {
           this.trips.push(trip);
         }
         return this.trips;
-
       }, error => {
+        snackBarError(error.message, this.snackBar);
       }));
   }
 
@@ -201,7 +198,7 @@ export class TripService {
     }
   }
 
-   searchOptionsTest(country, city) {
+  searchOptionsTest(country, city) {
     if (country && city) {
       return this.db.collection<ITrip>('trips', ref => {
         let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;

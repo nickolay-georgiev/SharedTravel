@@ -10,6 +10,9 @@ export class TripSearchFormComponent implements OnInit {
 
   @Output()
   searchFormOptionsEmitter = new EventEmitter();
+  @Output()
+  resetFormEmitter = new EventEmitter();
+
   searchForm: FormGroup;
   searchOptions: string[];
 
@@ -28,4 +31,7 @@ export class TripSearchFormComponent implements OnInit {
     this.searchFormOptionsEmitter.emit(this.searchForm.value);
   }
 
+  resetForm(){
+    this.resetFormEmitter.emit();
+  }
 }

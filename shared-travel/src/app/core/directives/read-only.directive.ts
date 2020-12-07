@@ -15,7 +15,7 @@ export class ReadOnlyDirective {
   ngOnInit() {
     const url = this.route.url;
     const el = this.elementRef.nativeElement;
-    if (url.endsWith('user')) {
+    if (url.endsWith('user/profile')) {
       this.renderer2.setAttribute(el, 'readonly', 'readonly');
       this.renderer2.setStyle(el, 'background', 'white');
     }

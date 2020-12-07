@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TransformUsernamePipe implements PipeTransform {
 
-  transform(value: string) {
+  transform(value: string): string {
     let index = value.indexOf('@');
     return value.slice(0, index);
   }

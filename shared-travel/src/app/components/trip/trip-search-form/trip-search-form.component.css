@@ -36,3 +36,12 @@
         background: #1A4668;
     }
 }
+
+div.col-lg-3.buttons-div {
+    display: flex;
+}
+
+button.btn.reset {
+    background-color: #aa66cc21 !important;
+} 
+

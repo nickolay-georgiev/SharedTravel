@@ -124,9 +124,9 @@
                 <label id="apply-btn" [ngClass]="{'disabled' : formIsValid || tripStartDate < currentDate}"
                     (click)="submitEditForm()" type="submit" class="modal-content-btn" for="modal-toggle">Apply
                     Changes</label>
-                <label id="delete-btn" *ngIf="(membersCount === 0 || currentDate > tripEndDate)" (click)="deleteTrip()"
+                <label id="delete-btn" *ngIf="(membersCount === 1 || currentDate > tripEndDate)" (click)="deleteTrip()"
                     type="submit" class="modal-content-btn" for="modal-toggle">Delete trip</label>
-                <label id="delete-btn" *ngIf="membersCount > 0 && currentDate < tripStartDate" (click)="leaveTrip()"
+                <label id="delete-btn" *ngIf="membersCount > 1 && currentDate < tripStartDate" (click)="leaveTrip()"
                     type="submit" class="modal-content-btn" for="modal-toggle">Leave this group</label>
                 <label *ngIf="currentDate > tripStartDate && currentDate <= tripEndDate" id="delete-btn" type="submit"
                     class="modal-content-btn start-trip" for="modal-toggle">this trip
@@ -136,17 +136,3 @@
         </form>
     </div>
 </div>
-
-<!-- <ng-container *ngIf="formIsDisabled;else ifFormIsValid">
-    <label id="apply-btn" [ngClass]="{'disabled' : formIsValid || startDate <= currentDate}"
-        (click)="submitEditForm()" type="submit" class="modal-content-btn" for="modal-toggle">Apply
-        Changes</label>
-    <label id="delete-btn" *ngIf="(membersCount === 0 || currentDate > endDate)" (click)="deleteTrip()"
-        type="submit" class="modal-content-btn" for="modal-toggle">Delete trip</label>
-    <label id="delete-btn" *ngIf="membersCount > 0 && currentDate > startDate" (click)="leaveTrip()" type="submit"
-        class="modal-content-btn" for="modal-toggle">Leave this group</label>
-</ng-container>
-<ng-template #ifFormIsValid>
-    <label id="delete-btn" type="submit" class="modal-content-btn start-trip" for="modal-toggle">this trip
-        has already start, you are not allowed to modify it</label>
-</ng-template> -->

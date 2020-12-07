@@ -1,3 +1,4 @@
+<h1>User Messages</h1>
 <div *ngIf="(messages$ | async) as messages">
     <app-user-message *ngFor="let message of messages" [message]="message"
         (deleteMessageEmitter)="deleteMessageHandler(message)">

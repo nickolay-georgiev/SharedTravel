@@ -4,9 +4,12 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import firebase from 'firebase/app'
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Observable } from 'rxjs';
 import { finalize, map } from 'rxjs/operators';
+
+import { snackBarError, snackBarInfo } from '../custom-functions/mat-snackbar-functions';
 
 import { AuthService } from './auth.service';
 import { IMessage } from '../interfaces/message';
@@ -26,11 +29,15 @@ export class UserService {
     private storage: AngularFireStorage,
     private router: Router,
     private authService: AuthService,
+    private snackBar: MatSnackBar
   ) { }
 
   updateUserData(data: IUser): void {
     this.afs.collection('users').doc(this.userId).update(data).then(() => {
+      snackBarInfo("User data successfully updated.", this.snackBar);
       this.router.navigate(['/user/profile']);
+    }).catch((error) => {
+      snackBarError(error.message, this.snackBar);
     });
   }
 
@@ -51,9 +58,17 @@ export class UserService {
     members = members.filter(x => x !== this.userId);
     members.forEach(member => {
       this.afs.collection('users-messages').doc(member).update({
-        notifications: firebase.firestore.FieldValue.arrayUnion({
-          description: message, createdOn: date, creator: this.authService.userEmail
-        })
+        notifications: firebase.firestore.FieldValue.arrayUnion(
+          {
+            description: message["value"].message,
+            createdOn: date,
+            creator: this.authService.userEmail
+          }
+        )
+      }).then(() => {
+        snackBarInfo("Message was sent.", this.snackBar);
+      }).catch(error => {
+        snackBarError(error.message, this.snackBar);
       })
     })
   }
@@ -70,13 +85,19 @@ export class UserService {
     this.afs.collection('users-messages').doc(this.userId).update({
       notifications: firebase.firestore.FieldValue.arrayRemove(
         message)
+    }).then(() => {
+      snackBarInfo("Message successfully deleted.", this.snackBar);
+    }).catch((error) => {
+      snackBarError(error.message, this.snackBar);
     });
   }
 
   private updateUserAvatar(imgUrl: string) {
-    this.afs.collection<IUser>('users').doc(this.userId).update({ imgUrl: imgUrl }).then(() => {
-      this.router.navigate(['/user/edit']);
-    });
+    this.afs.collection<IUser>('users').doc(this.userId).update({ imgUrl: imgUrl })
+      .then(() => {
+        snackBarInfo("Enjoy your new photo.", this.snackBar);
+        this.router.navigate(['/user/edit']);
+      });
   }
 
   get userId() {

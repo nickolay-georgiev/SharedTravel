@@ -11,11 +11,11 @@
   </div>
 </div>
 
-<app-trip-search-form (searchFormOptionsEmitter)="getByFilters($event)"></app-trip-search-form>
+<app-trip-search-form (searchFormOptionsEmitter)="getByFilters($event)" (resetFormEmitter)="resetFormHandler()"></app-trip-search-form>
 
 <div class="container">
   <section class="text-center">    
-    <h4 class="mb-5"><strong>Latest posts</strong></h4>
+    <h4 class="mb-5">Destinations</h4>
     <mat-paginator [length]="20" [(pageSize)]="initialPageSize" [pageIndex]="page" [pageSizeOptions]="[1, 5, 10]"
     (page)="setPaginatorData($event)">
   </mat-paginator>
