@@ -1,0 +1,59 @@
+<div>
+  <!-- Background image -->
+  <div class="header">
+    <div id="intro" class="bg-image fadeIn"></div>
+    <h1 class="display-1 deepshd">Make Your Tour Amazing With Us</h1>
+  </div>
+
+  <main class="mt-5 mb-4">
+    <div class="container">   
+      <section class="text-center">
+        <h4 class="mb-5">LATEST DESTINATIONS</h4>
+        <div class="row">
+          <div class="card-wrapper" *ngIf="(trips$ | async) as trips">
+            <app-home-page-trip *ngFor="let trip of trips" [trip]="trip"></app-home-page-trip>
+          </div>
+        </div>
+      </section>     
+    </div>
+  </main>  
+</div>
+
+ <!--Footer-->
+ <footer class="bg-light text-center text-lg-left">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0 d-flex justify-content-center justify-content-md-start align-items-center">
+        <strong>Get connected with us on social networks</strong>
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center justify-content-md-end">
+        <!-- Facebook -->
+        <a class="btn btn-primary btn-sm btn-floating mr-2" style="background-color: #3b5998"
+          role="button"><i class="fab fa-facebook-f"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-sm btn-floating mr-2" style="background-color: #55acee"
+          role="button"><i class="fab fa-twitter"></i></a>
+        <!-- Pinterest -->
+        <a class="btn btn-primary btn-sm btn-floating mr-2" style="background-color: #c61118"
+          role="button"><i class="fab fa-pinterest"></i></a>
+        <!-- Youtube -->
+        <a class="btn btn-primary btn-sm btn-floating mr-2" style="background-color: #ed302f"
+          role="button"><i class="fab fa-youtube"></i></a>
+        <!-- Instagram -->
+        <a class="btn btn-primary btn-sm btn-floating mr-2" style="background-color: #ac2bac"
+          role="button"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <hr class="my-3" />
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://softuni.bg/">SOFTUNI PROJECT</a>
+  </div>
+  <!-- Copyright -->
+</footer>

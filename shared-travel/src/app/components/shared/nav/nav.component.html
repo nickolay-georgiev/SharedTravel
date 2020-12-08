@@ -29,21 +29,6 @@
         <!-- Collapsible wrapper -->
         <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
             <ul class="navbar-nav flex-row">
-             
-                <!-- Notification dropdown -->
-                <li class="nav-item dropdown mr-3 mr-lg-0">
-                    <a class="nav-link dropdown-toggle hidden-arrow" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-expanded="false">
-                        <span>Dropdoun</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" routerLink="/user/messages">Some news</a></li>
-                        <li><a class="dropdown-item">Another news</a></li>
-                        <li>
-                            <a class="dropdown-item">Something else here</a>
-                        </li>
-                    </ul>
-                </li>
                 <ng-container *ngIf="!isLoggedIn">
                     <li class="nav-item mr-3 mr-lg-0">
                         <a class="nav-link" routerLink="/register">
@@ -66,6 +51,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" routerLink="/user/profile">My Profile</a></li>
+                        <li><a class="dropdown-item" routerLink="/user/messages">My Messages</a></li>
                         <li><a class="dropdown-item" routerLink="/trip/create">Create Trip</a></li>
                         <li><a class="dropdown-item" routerLink="/user/trip">My Trips</a></li>
                         <li><a class="dropdown-item" routerLink="/user/joins">My Joined Trips</a></li>
@@ -78,4 +64,3 @@
     </div>
     <!-- Container wrapper -->
 </nav>
-<!-- Animated navbar -->

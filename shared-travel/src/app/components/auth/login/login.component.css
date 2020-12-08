@@ -64,10 +64,6 @@ button:disabled {
   border-radius: 0 0 10px 10px;
 }
 
-.wrapper.fadeInDown {
-  margin-top: 100px;
-}
-
 #login {
     margin-top: 2rem;
 }
