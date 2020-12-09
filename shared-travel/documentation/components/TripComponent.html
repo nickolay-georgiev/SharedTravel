@@ -1,0 +1,538 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>shared-travel documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">shared-travel documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TripComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/trip/trip/trip.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trip</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./trip.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trip.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#trip">trip</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/trip/trip/trip.component.ts:11</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="trip"></a>
+                        <b>trip</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ITrip.html" target="_self" >ITrip</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/trip/trip/trip.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { ITrip } from &#x27;src/app/core/interfaces/trip&#x27;;
+
+@Component({
+  selector: &#x27;app-trip&#x27;,
+  templateUrl: &#x27;./trip.component.html&#x27;,
+  styleUrls: [&#x27;./trip.component.css&#x27;]
+})
+export class TripComponent {
+
+  @Input() trip: ITrip;
+
+  constructor() { }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+    &lt;div class&#x3D;&quot;wrapper&quot;&gt;
+      &lt;div class&#x3D;&quot;clash-card barbarian&quot;&gt;
+        &lt;div class&#x3D;&quot;clash-card__image clash-card__image--barbarian&quot;&gt;
+          &lt;img src&#x3D;{{trip.imgPath}} alt&#x3D;&quot;barbarian&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;clash-card__level clash-card__level--barbarian&quot;&gt;{{trip.country}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;clash-card__unit-name&quot;&gt;{{trip.city | titlecase}}&lt;/div&gt;
+        &lt;div class&#x3D;&quot;clash-card__unit-description&quot;&gt;    
+          &lt;button [routerLink]&#x3D;&quot;[&#x27;/trip/list&#x27;, trip.id]&quot; class&#x3D;&quot;btn btn-sm btn-default float-right details-button&quot;&gt;Details&lt;/button&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;clash-card__unit-stats clash-card__unit-stats--barbarian clearfix&quot;&gt;
+          &lt;div class&#x3D;&quot;card-footer&quot;&gt;
+            &lt;div class&#x3D;&quot;stat&quot;&gt;{{trip.duration.startDate | date:&#x27;MM-dd-yyyy&#x27;}}&lt;/div&gt;
+            &lt;div class&#x3D;&quot;stat-value&quot;&gt;Start Date&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./trip.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import url(https://fonts.googleapis.com/css?family&#x3D;Lato:400,700,900);
+ *, *:before, *:after {
+	 box-sizing: border-box;
+}
+ body {
+	 background: linear-gradient(to bottom, rgba(140, 122, 122, 1) 0%, rgba(175, 135, 124, 1) 65%, rgba(175, 135, 124, 1) 100%) fixed;
+	 background: url(&#x27;https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/coc-background.jpg&#x27;) no-repeat center center fixed;
+	 background-size: cover;
+	 font: 14px/20px &quot;Lato&quot;, Arial, sans-serif;
+	 color: #9e9e9e;
+	 margin-top: 30px;
+}
+ .slide-container {
+	 margin: auto;
+	 width: 600px;
+	 text-align: center;
+}
+ .wrapper {
+	 padding-top: 40px;
+	 padding-bottom: 40px;
+}
+ .wrapper:focus {
+	 outline: 0;
+}
+ .clash-card {
+	 background: white;
+	 width: 300px;
+	 display: inline-block;
+	 margin: auto;
+	 border-radius: 19px;
+	 position: relative;
+	 text-align: center;
+	 box-shadow: -1px 15px 30px -12px black;
+	 z-index: 9999;
+}
+ .clash-card__image {
+	 position: relative;
+	 height: 230px;
+	 margin-bottom: 35px;
+	 border-top-left-radius: 14px;
+	 border-top-right-radius: 14px;
+}
+
+ .clash-card__image--barbarian img {
+	width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-top-left-radius: 14px; 
+    border-top-right-radius: 14px; 
+}
+ .clash-card__image--archer {
+	 background: url(&#x27;https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/archer-bg.jpg&#x27;);
+}
+ .clash-card__image--archer img {
+	 width: 400px;
+	 position: absolute;
+	 top: -34px;
+	 left: -37px;
+}
+ .clash-card__image--giant {
+	 background: url(&#x27;https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/giant-bg.jpg&#x27;);
+}
+ .clash-card__image--giant img {
+	 width: 340px;
+	 position: absolute;
+	 top: -30px;
+	 left: -25px;
+}
+ .clash-card__image--goblin {
+	 background: url(&#x27;https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/goblin-bg.jpg&#x27;);
+}
+ .clash-card__image--goblin img {
+	 width: 370px;
+	 position: absolute;
+	 top: -21px;
+	 left: -37px;
+}
+ .clash-card__image--wizard {
+	 background: url(&#x27;https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/wizard-bg.jpg&#x27;);
+}
+ .clash-card__image--wizard img {
+	 width: 345px;
+	 position: absolute;
+	 top: -28px;
+	 left: -10px;
+}
+ .clash-card__level {
+	 text-transform: uppercase;
+	 font-size: 12px;
+	 font-weight: 700;
+	 margin-bottom: 3px;
+}
+ .clash-card__level--barbarian {
+	 color: #ec9b3b;
+}
+ .clash-card__level--archer {
+	 color: #ee5487;
+}
+ .clash-card__level--giant {
+	 color: #f6901a;
+}
+ .clash-card__level--goblin {
+	 color: #82bb30;
+}
+ .clash-card__level--wizard {
+	 color: #4facff;
+}
+ .clash-card__unit-name {
+	 font-size: 26px;
+	 color: black;
+	 font-weight: 900;
+	 margin-bottom: 5px;
+}
+ .clash-card__unit-description {
+	 padding: 20px;
+	 margin-bottom: 10px;
+}
+ .clash-card__unit-stats--barbarian {
+	 background: #ec9b3b;
+}
+ .clash-card__unit-stats--barbarian .one-third {
+	 border-right: 1px solid #bd7c2f;
+}
+ .clash-card__unit-stats--archer {
+	 background: #ee5487;
+}
+ .clash-card__unit-stats--archer .one-third {
+	 border-right: 1px solid #d04976;
+}
+ .clash-card__unit-stats--giant {
+	 background: #f6901a;
+}
+ .clash-card__unit-stats--giant .one-third {
+	 border-right: 1px solid #de7b09;
+}
+ .clash-card__unit-stats--goblin {
+	 background: #82bb30;
+}
+ .clash-card__unit-stats--goblin .one-third {
+	 border-right: 1px solid #71a32a;
+}
+ .clash-card__unit-stats--wizard {
+	 background: #4facff;
+}
+ .clash-card__unit-stats--wizard .one-third {
+	 border-right: 1px solid #309eff;
+}
+ .clash-card__unit-stats {
+	 color: white;
+	 font-weight: 700;
+	 border-bottom-left-radius: 14px;
+	 border-bottom-right-radius: 14px;
+}
+ .clash-card__unit-stats .one-third {
+	 width: 33%;
+	 float: left;
+	 padding: 20px 15px;
+}
+ .clash-card__unit-stats sup {
+	 position: absolute;
+	 bottom: 4px;
+	 font-size: 45%;
+	 margin-left: 2px;
+}
+ .clash-card__unit-stats .stat {
+	 position: relative;
+	 font-size: 24px;
+}
+ .clash-card__unit-stats .stat-value {
+	 text-transform: uppercase;
+	 font-weight: 400;
+	 font-size: 12px;
+}
+ .clash-card__unit-stats .no-border {
+	 border-right: none;
+}
+ .clearfix:after {
+	 visibility: hidden;
+	 display: block;
+	 font-size: 0;
+	 content: &quot; &quot;;
+	 clear: both;
+	 height: 0;
+}
+
+div.col-md-4 {
+	z-index: 1;
+}
+
+.details-button {
+	margin: 0;
+	float: none !important;
+	font-size: 0.8rem;
+	position: absolute;
+    top: 73%;
+    left: 32.7%;
+}
+
+div.card-footer {
+	padding: 25px 0;
+}
+ </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="col-md-4">    <div class="wrapper">      <div class="clash-card barbarian">        <div class="clash-card__image clash-card__image--barbarian">          <img src={{trip.imgPath}} alt="barbarian" />        </div>        <div class="clash-card__level clash-card__level--barbarian">{{trip.country}}</div>        <div class="clash-card__unit-name">{{trip.city | titlecase}}</div>        <div class="clash-card__unit-description">              <button [routerLink]="[\'/trip/list\', trip.id]" class="btn btn-sm btn-default float-right details-button">Details</button>        </div>          <div class="clash-card__unit-stats clash-card__unit-stats--barbarian clearfix">          <div class="card-footer">            <div class="stat">{{trip.duration.startDate | date:\'MM-dd-yyyy\'}}</div>            <div class="stat-value">Start Date</div>          </div>        </div>      </div>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomePageTripComponent', 'selector': 'app-home-page-trip'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TripComponent', 'selector': 'app-trip'},{'name': 'TripCreateComponent', 'selector': 'app-trip-create'},{'name': 'TripDetailComponent', 'selector': 'app-trip-detail'},{'name': 'TripEditComponent', 'selector': 'app-trip-edit'},{'name': 'TripListComponent', 'selector': 'app-trip-list'},{'name': 'TripMembersComponent', 'selector': 'app-trip-members'},{'name': 'TripSearchFormComponent', 'selector': 'app-trip-search-form'},{'name': 'UserMessageComponent', 'selector': 'app-user-message'},{'name': 'UserMessagesComponent', 'selector': 'app-user-messages'},{'name': 'UserNotificationFormComponent', 'selector': 'app-user-notification-form'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserTripComponent', 'selector': 'app-user-trip'},{'name': 'UserUploadPhotoComponent', 'selector': 'app-user-upload-photo'}];
+    var DIRECTIVES = [{'name': 'HideElementDirective', 'selector': '[appHideElement]'},{'name': 'ReadOnlyDirective', 'selector': '[appReadOnly]'}];
+    var ACTUAL_COMPONENT = {'name': 'TripComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TripComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

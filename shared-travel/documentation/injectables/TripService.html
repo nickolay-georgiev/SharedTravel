@@ -1,0 +1,1417 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>shared-travel documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">shared-travel documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>TripService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/trip.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#db">db</a>
+                            </li>
+                            <li>
+                                <a href="#filterFunctions">filterFunctions</a>
+                            </li>
+                            <li>
+                                <a href="#trips">trips</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#createTrip">createTrip</a>
+                            </li>
+                            <li>
+                                <a href="#deleteTrip">deleteTrip</a>
+                            </li>
+                            <li>
+                                <a href="#getAllTrips">getAllTrips</a>
+                            </li>
+                            <li>
+                                <a href="#getTripById">getTripById</a>
+                            </li>
+                            <li>
+                                <a href="#getTripsByFilter">getTripsByFilter</a>
+                            </li>
+                            <li>
+                                <a href="#getTripsByUserIdWithProgress">getTripsByUserIdWithProgress</a>
+                            </li>
+                            <li>
+                                <a href="#getTripsForHomePage">getTripsForHomePage</a>
+                            </li>
+                            <li>
+                                <a href="#getTripsWhereUserIsMember">getTripsWhereUserIsMember</a>
+                            </li>
+                            <li>
+                                <a href="#getUserTrips">getUserTrips</a>
+                            </li>
+                            <li>
+                                <a href="#searchOptions">searchOptions</a>
+                            </li>
+                            <li>
+                                <a href="#searchOptionsTest">searchOptionsTest</a>
+                            </li>
+                            <li>
+                                <a href="#updateTrip">updateTrip</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(db: AngularFirestore, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/services/trip.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>db</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createTrip"></a>
+                    <span class="name">
+                        <b>
+                            createTrip
+                        </b>
+                        <a href="#createTrip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createTrip(trip: <a href="../interfaces/ITrip.html">ITrip</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>trip</td>
+                                    <td>
+                                                <code><a href="../interfaces/ITrip.html" target="_self" >ITrip</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTrip"></a>
+                    <span class="name">
+                        <b>
+                            deleteTrip
+                        </b>
+                        <a href="#deleteTrip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteTrip(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="110"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:110</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllTrips"></a>
+                    <span class="name">
+                        <b>
+                            getAllTrips
+                        </b>
+                        <a href="#getAllTrips"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllTrips()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:161</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ITrip.html" target="_self" >Observable&lt;ITrip[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTripById"></a>
+                    <span class="name">
+                        <b>
+                            getTripById
+                        </b>
+                        <a href="#getTripById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTripById(tripId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>tripId</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTripsByFilter"></a>
+                    <span class="name">
+                        <b>
+                            getTripsByFilter
+                        </b>
+                        <a href="#getTripsByFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTripsByFilter(form: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="116"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:116</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>form</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ITrip.html" target="_self" >Observable&lt;ITrip[]&gt;</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTripsByUserIdWithProgress"></a>
+                    <span class="name">
+                        <b>
+                            getTripsByUserIdWithProgress
+                        </b>
+                        <a href="#getTripsByUserIdWithProgress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTripsByUserIdWithProgress(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTripsForHomePage"></a>
+                    <span class="name">
+                        <b>
+                            getTripsForHomePage
+                        </b>
+                        <a href="#getTripsForHomePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTripsForHomePage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="140"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:140</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/ITrip.html" target="_self" >Observable&lt;ITrip[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getTripsWhereUserIsMember"></a>
+                    <span class="name">
+                        <b>
+                            getTripsWhereUserIsMember
+                        </b>
+                        <a href="#getTripsWhereUserIsMember"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getTripsWhereUserIsMember(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:78</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserTrips"></a>
+                    <span class="name">
+                        <b>
+                            getUserTrips
+                        </b>
+                        <a href="#getUserTrips"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserTrips(userId)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>userId</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchOptions"></a>
+                    <span class="name">
+                        <b>
+                            searchOptions
+                        </b>
+                        <a href="#searchOptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchOptions(country, city)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="181"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:181</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>country</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>city</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchOptionsTest"></a>
+                    <span class="name">
+                        <b>
+                            searchOptionsTest
+                        </b>
+                        <a href="#searchOptionsTest"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>searchOptionsTest(country, city)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>country</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>city</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateTrip"></a>
+                    <span class="name">
+                        <b>
+                            updateTrip
+                        </b>
+                        <a href="#updateTrip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateTrip(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, trip)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="106"
+                            class="link-to-prism">src/app/core/services/trip.service.ts:106</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>trip</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="db"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            db</b>
+                            <a href="#db"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>AngularFirestore</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/core/services/trip.service.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterFunctions"></a>
+                        <span class="name">
+                            <b>
+                            filterFunctions</b>
+                            <a href="#filterFunctions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+    &#x27;Males only&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips.filter(x &#x3D;&gt; x.groupType &#x3D;&#x3D;&#x3D; &#x27;Males only&#x27;),
+    &#x27;Females only&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips.filter(x &#x3D;&gt; x.groupType &#x3D;&#x3D;&#x3D; &#x27;Females only&#x27;),
+    &#x27;Males and Females&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips,
+    &#x27;Filter By&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips,
+  }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/core/services/trip.service.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="trips"></a>
+                        <span class="name">
+                            <b>
+                            trips</b>
+                            <a href="#trips"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ITrip.html" target="_self" >ITrip[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/services/trip.service.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Params, Router } from &#x27;@angular/router&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import firebase from &#x27;firebase&#x27;
+
+import { Observable, of, forkJoin } from &#x27;rxjs&#x27;;
+import { map, switchMap } from &#x27;rxjs/operators&#x27;;
+
+import { ITrip } from &#x27;../interfaces/trip&#x27;;
+import { AuthService } from &#x27;./auth.service&#x27;;
+import { snackBarError, snackBarInfo } from &#x27;../custom-functions/mat-snackbar-functions&#x27;;
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class TripService {
+  trips: ITrip[] &#x3D; [];
+
+  constructor(
+    public db: AngularFirestore,
+    private router: Router,
+    private authService: AuthService,
+    private snackBar: MatSnackBar
+    ) { }
+
+  filterFunctions &#x3D; {
+    &#x27;Males only&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips.filter(x &#x3D;&gt; x.groupType &#x3D;&#x3D;&#x3D; &#x27;Males only&#x27;),
+    &#x27;Females only&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips.filter(x &#x3D;&gt; x.groupType &#x3D;&#x3D;&#x3D; &#x27;Females only&#x27;),
+    &#x27;Males and Females&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips,
+    &#x27;Filter By&#x27;: (trips: ITrip[]): ITrip[] &#x3D;&gt; trips,
+  }
+
+  createTrip(trip: ITrip) {
+    let creator &#x3D; this.authService.currentUserId;
+    trip.country &#x3D; trip.country.toLowerCase();
+    trip.city &#x3D; trip.city.toLowerCase();
+    trip.members.push(creator);
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;).add(trip)
+      .then(() &#x3D;&gt; {
+        snackBarInfo(&quot;Trip was successfully created.&quot;, this.snackBar);
+        this.router.navigate([&#x27;/user/trip&#x27;]);
+      })
+      .catch((error) &#x3D;&gt; {
+        snackBarError(error.message, this.snackBar);
+      });;
+  }
+
+  getTripById(tripId: string): Observable&lt;any&gt; {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;).doc(tripId).snapshotChanges()
+      .pipe(
+        switchMap((params: Params) &#x3D;&gt; {
+          if (!params) {
+            console.log(&quot;No Data Available&quot;);
+          }
+          let id &#x3D; params.payload.id;
+          let members &#x3D; params.payload.data().members;
+          if (members.length &#x3D;&#x3D; 0) { members.push(&#x27;empty&#x27;) };
+          return forkJoin([of({ id, ...params.payload.data() }),
+          this.db.collection(&#x27;users&#x27;, ref &#x3D;&gt; ref
+            .where(&#x27;__name__&#x27;, &#x27;in&#x27;, members))
+            .get()])
+        }
+        ))
+
+  }
+
+  getUserTrips(userId) {
+    let url &#x3D; this.router.url;
+    if (url.endsWith(&#x27;trip&#x27;)) {
+      return this.getTripsByUserIdWithProgress(userId);
+    } else {
+      return this.getTripsWhereUserIsMember(userId);;
+    }
+  }
+
+  getTripsWhereUserIsMember(id: string) {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;, ref &#x3D;&gt; ref
+      .where(&#x27;members&#x27;, &#x27;array-contains&#x27;, id))
+      .get()
+      .pipe(map(res &#x3D;&gt; {
+        return res.docs.map(doc &#x3D;&gt; {
+          let data &#x3D; doc.data();
+          let endDate &#x3D; new Date(data.duration.endDate);
+          let currentDate &#x3D; new Date();
+          return Object.assign(data, { progress: endDate &lt;&#x3D; currentDate, id: doc.id })
+        });
+      }))
+  }
+
+  getTripsByUserIdWithProgress(id: string) {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;, ref &#x3D;&gt; ref.
+      where(&#x27;creator&#x27;, &#x27;&#x3D;&#x3D;&#x27;, id))
+      .get()
+      .pipe(map(res &#x3D;&gt; {
+        return res.docs.map(doc &#x3D;&gt; {
+          let data &#x3D; doc.data();
+          let endDate &#x3D; new Date(data.duration.endDate);
+          let currentDate &#x3D; new Date();
+          return Object.assign(data, { progress: endDate &lt;&#x3D; currentDate, id: doc.id })
+        });
+      }))
+  }
+
+  updateTrip(id: string, trip) {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;).doc(id).update(trip);
+  }
+
+  deleteTrip(id: string) {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;).doc(id).delete().then(() &#x3D;&gt; {
+      this.router.navigate([&#x27;/trip/list&#x27;])
+    });
+  }
+
+  getTripsByFilter(form: { country: string, city: string, filterBy: string }): Observable&lt;ITrip[]&gt; {
+    let country &#x3D; form.country.toLowerCase().trim();
+    let city &#x3D; form.city.toLowerCase().trim();
+    let filterBy &#x3D; form.filterBy;
+
+    if (!country &amp;&amp; !city &amp;&amp; filterBy &#x3D;&#x3D;&#x3D; &#x27;Filter By&#x27;) { return of(this.trips) };
+    if (!country &amp;&amp; !city &amp;&amp; filterBy) { return of(this.filterFunctions[filterBy](this.trips)) }
+
+    return this.searchOptions(country, city)
+      .pipe(map(response &#x3D;&gt; {
+        if (!response.length) {
+          console.log(&quot;No Data Available&quot;);
+        }
+        this.trips &#x3D; [];
+        for (let item of response) {
+          const trip &#x3D; item.payload.doc.data() as ITrip;
+          trip.id &#x3D; item.payload.doc.id;
+          this.trips.push(trip);
+        }
+        return this.filterFunctions[filterBy](this.trips);
+      }, error &#x3D;&gt; {
+      }));
+  }
+
+  getTripsForHomePage(): Observable&lt;ITrip[]&gt; {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;, ref &#x3D;&gt; ref
+      .orderBy(&#x27;duration.startDate&#x27;, &#x27;asc&#x27;)
+      .limit(6))
+      .snapshotChanges()
+      .pipe(map(response &#x3D;&gt; {
+        if (!response.length) {
+          console.log(&quot;No Data Available&quot;);
+        }
+        this.trips &#x3D; [];
+        for (let item of response) {
+          const trip &#x3D; item.payload.doc.data();
+          trip.id &#x3D; item.payload.doc.id;
+          this.trips.push(trip);
+        }
+        return this.trips;
+      }, error &#x3D;&gt; {
+        snackBarError(error.message, this.snackBar);
+      }));
+  }
+
+  getAllTrips(): Observable&lt;ITrip[]&gt; {
+    return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;, ref &#x3D;&gt; ref
+      .orderBy(&#x27;duration.startDate&#x27;, &#x27;desc&#x27;))
+      .snapshotChanges()
+      .pipe(map(response &#x3D;&gt; {
+        if (!response.length) {
+          console.log(&quot;No Data Available&quot;);
+        }
+        this.trips &#x3D; [];
+        for (let item of response) {
+          const trip &#x3D; item.payload.doc.data();
+          trip.id &#x3D; item.payload.doc.id;
+          this.trips.push(trip);
+        }
+        return this.trips;
+      }, error &#x3D;&gt; {
+        snackBarError(error.message, this.snackBar);
+      }));
+  }
+
+  searchOptions(country, city) {
+    if (country &amp;&amp; city) {
+      return this.db.collection(&#x27;trips&#x27;, ref &#x3D;&gt; {
+        return ref
+          .where(&#x27;country&#x27;, &#x27;&#x3D;&#x3D;&#x27;, country)
+          .where(&#x27;city&#x27;, &#x27;&#x3D;&#x3D;&#x27;, city)
+      }).snapshotChanges();
+    } else if (city &amp;&amp; !country) {
+      return this.db.collection(&#x27;trips&#x27;, ref &#x3D;&gt; {
+        return ref
+          .where(&#x27;city&#x27;, &#x27;&#x3D;&#x3D;&#x27;, city)
+      }).snapshotChanges();
+    } else if (country &amp;&amp; !city) {
+      return this.db.collection(&#x27;trips&#x27;, ref &#x3D;&gt; {
+        return ref
+          .where(&#x27;country&#x27;, &#x27;&#x3D;&#x3D;&#x27;, country)
+      }).snapshotChanges();
+    }
+  }
+
+  searchOptionsTest(country, city) {
+    if (country &amp;&amp; city) {
+      return this.db.collection&lt;ITrip&gt;(&#x27;trips&#x27;, ref &#x3D;&gt; {
+        let query: firebase.firestore.CollectionReference | firebase.firestore.Query &#x3D; ref;
+        if (country &amp;&amp; city) { query &#x3D; query.where(&#x27;country&#x27;, &#x27;&#x3D;&#x3D;&#x27;, country).where(&#x27;city&#x27;, &#x27;&#x3D;&#x3D;&#x27;, city) };
+        if (city &amp;&amp; !country) { query &#x3D; query.where(&#x27;city&#x27;, &#x27;&#x3D;&#x3D;&#x27;, city) };
+        if (country &amp;&amp; !city) { query &#x3D; query.where(&#x27;country&#x27;, &#x27;&#x3D;&#x3D;&#x27;, country) };
+        return query;
+      }).snapshotChanges();
+    }
+  }
+}</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'TripService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

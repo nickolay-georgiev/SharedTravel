@@ -1,0 +1,1273 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>shared-travel documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">shared-travel documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>RegisterComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/auth/register/register.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-register</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./register.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./register.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#countryList">countryList</a>
+                            </li>
+                            <li>
+                                <a href="#registerForm">registerForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#register">register</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#f">f</a>
+                                </li>
+                                <li>
+                                    <a href="#isValid">isValid</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/auth/register/register.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="16"
+                            class="link-to-prism">src/app/components/auth/register/register.component.ts:16</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="register"></a>
+                    <span class="name">
+                        <b>
+                            register
+                        </b>
+                        <a href="#register"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>register()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/components/auth/register/register.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="countryList"></a>
+                        <span class="name">
+                            <b>
+                            countryList</b>
+                            <a href="#countryList"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    &quot;Afghanistan&quot;,
+    &quot;Albania&quot;,
+    &quot;Algeria&quot;,
+    &quot;American Samoa&quot;,
+    &quot;Andorra&quot;,
+    &quot;Angola&quot;,
+    &quot;Anguilla&quot;,
+    &quot;Antarctica&quot;,
+    &quot;Antigua and Barbuda&quot;,
+    &quot;Argentina&quot;,
+    &quot;Armenia&quot;,
+    &quot;Aruba&quot;,
+    &quot;Australia&quot;,
+    &quot;Austria&quot;,
+    &quot;Azerbaijan&quot;,
+    &quot;Bahamas (the)&quot;,
+    &quot;Bahrain&quot;,
+    &quot;Bangladesh&quot;,
+    &quot;Barbados&quot;,
+    &quot;Belarus&quot;,
+    &quot;Belgium&quot;,
+    &quot;Belize&quot;,
+    &quot;Benin&quot;,
+    &quot;Bermuda&quot;,
+    &quot;Bhutan&quot;,
+    &quot;Bolivia (Plurinational State of)&quot;,
+    &quot;Bonaire, Sint Eustatius and Saba&quot;,
+    &quot;Bosnia and Herzegovina&quot;,
+    &quot;Botswana&quot;,
+    &quot;Bouvet Island&quot;,
+    &quot;Brazil&quot;,
+    &quot;British Indian Ocean Territory (the)&quot;,
+    &quot;Brunei Darussalam&quot;,
+    &quot;Bulgaria&quot;,
+    &quot;Burkina Faso&quot;,
+    &quot;Burundi&quot;,
+    &quot;Cabo Verde&quot;,
+    &quot;Cambodia&quot;,
+    &quot;Cameroon&quot;,
+    &quot;Canada&quot;,
+    &quot;Cayman Islands (the)&quot;,
+    &quot;Central African Republic (the)&quot;,
+    &quot;Chad&quot;,
+    &quot;Chile&quot;,
+    &quot;China&quot;,
+    &quot;Christmas Island&quot;,
+    &quot;Cocos (Keeling) Islands (the)&quot;,
+    &quot;Colombia&quot;,
+    &quot;Comoros (the)&quot;,
+    &quot;Congo (the Democratic Republic of the)&quot;,
+    &quot;Congo (the)&quot;,
+    &quot;Cook Islands (the)&quot;,
+    &quot;Costa Rica&quot;,
+    &quot;Croatia&quot;,
+    &quot;Cuba&quot;,
+    &quot;Curaçao&quot;,
+    &quot;Cyprus&quot;,
+    &quot;Czechia&quot;,
+    &quot;Côte d&#x27;Ivoire&quot;,
+    &quot;Denmark&quot;,
+    &quot;Djibouti&quot;,
+    &quot;Dominica&quot;,
+    &quot;Dominican Republic (the)&quot;,
+    &quot;Ecuador&quot;,
+    &quot;Egypt&quot;,
+    &quot;El Salvador&quot;,
+    &quot;Equatorial Guinea&quot;,
+    &quot;Eritrea&quot;,
+    &quot;Estonia&quot;,
+    &quot;Eswatini&quot;,
+    &quot;Ethiopia&quot;,
+    &quot;Falkland Islands (the) [Malvinas]&quot;,
+    &quot;Faroe Islands (the)&quot;,
+    &quot;Fiji&quot;,
+    &quot;Finland&quot;,
+    &quot;France&quot;,
+    &quot;French Guiana&quot;,
+    &quot;French Polynesia&quot;,
+    &quot;French Southern Territories (the)&quot;,
+    &quot;Gabon&quot;,
+    &quot;Gambia (the)&quot;,
+    &quot;Georgia&quot;,
+    &quot;Germany&quot;,
+    &quot;Ghana&quot;,
+    &quot;Gibraltar&quot;,
+    &quot;Greece&quot;,
+    &quot;Greenland&quot;,
+    &quot;Grenada&quot;,
+    &quot;Guadeloupe&quot;,
+    &quot;Guam&quot;,
+    &quot;Guatemala&quot;,
+    &quot;Guernsey&quot;,
+    &quot;Guinea&quot;,
+    &quot;Guinea-Bissau&quot;,
+    &quot;Guyana&quot;,
+    &quot;Haiti&quot;,
+    &quot;Heard Island and McDonald Islands&quot;,
+    &quot;Holy See (the)&quot;,
+    &quot;Honduras&quot;,
+    &quot;Hong Kong&quot;,
+    &quot;Hungary&quot;,
+    &quot;Iceland&quot;,
+    &quot;India&quot;,
+    &quot;Indonesia&quot;,
+    &quot;Iran (Islamic Republic of)&quot;,
+    &quot;Iraq&quot;,
+    &quot;Ireland&quot;,
+    &quot;Isle of Man&quot;,
+    &quot;Israel&quot;,
+    &quot;Italy&quot;,
+    &quot;Jamaica&quot;,
+    &quot;Japan&quot;,
+    &quot;Jersey&quot;,
+    &quot;Jordan&quot;,
+    &quot;Kazakhstan&quot;,
+    &quot;Kenya&quot;,
+    &quot;Kiribati&quot;,
+    &quot;Korea (the Democratic People&#x27;s Republic of)&quot;,
+    &quot;Korea (the Republic of)&quot;,
+    &quot;Kuwait&quot;,
+    &quot;Kyrgyzstan&quot;,
+    &quot;Lao People&#x27;s Democratic Republic (the)&quot;,
+    &quot;Latvia&quot;,
+    &quot;Lebanon&quot;,
+    &quot;Lesotho&quot;,
+    &quot;Liberia&quot;,
+    &quot;Libya&quot;,
+    &quot;Liechtenstein&quot;,
+    &quot;Lithuania&quot;,
+    &quot;Luxembourg&quot;,
+    &quot;Macao&quot;,
+    &quot;Madagascar&quot;,
+    &quot;Malawi&quot;,
+    &quot;Malaysia&quot;,
+    &quot;Maldives&quot;,
+    &quot;Mali&quot;,
+    &quot;Malta&quot;,
+    &quot;Marshall Islands (the)&quot;,
+    &quot;Martinique&quot;,
+    &quot;Mauritania&quot;,
+    &quot;Mauritius&quot;,
+    &quot;Mayotte&quot;,
+    &quot;Mexico&quot;,
+    &quot;Micronesia (Federated States of)&quot;,
+    &quot;Moldova (the Republic of)&quot;,
+    &quot;Monaco&quot;,
+    &quot;Mongolia&quot;,
+    &quot;Montenegro&quot;,
+    &quot;Montserrat&quot;,
+    &quot;Morocco&quot;,
+    &quot;Mozambique&quot;,
+    &quot;Myanmar&quot;,
+    &quot;Namibia&quot;,
+    &quot;Nauru&quot;,
+    &quot;Nepal&quot;,
+    &quot;Netherlands (the)&quot;,
+    &quot;New Caledonia&quot;,
+    &quot;New Zealand&quot;,
+    &quot;Nicaragua&quot;,
+    &quot;Niger (the)&quot;,
+    &quot;Nigeria&quot;,
+    &quot;Niue&quot;,
+    &quot;Norfolk Island&quot;,
+    &quot;Northern Mariana Islands (the)&quot;,
+    &quot;Norway&quot;,
+    &quot;Oman&quot;,
+    &quot;Pakistan&quot;,
+    &quot;Palau&quot;,
+    &quot;Palestine, State of&quot;,
+    &quot;Panama&quot;,
+    &quot;Papua New Guinea&quot;,
+    &quot;Paraguay&quot;,
+    &quot;Peru&quot;,
+    &quot;Philippines (the)&quot;,
+    &quot;Pitcairn&quot;,
+    &quot;Poland&quot;,
+    &quot;Portugal&quot;,
+    &quot;Puerto Rico&quot;,
+    &quot;Qatar&quot;,
+    &quot;Republic of North Macedonia&quot;,
+    &quot;Romania&quot;,
+    &quot;Russian Federation (the)&quot;,
+    &quot;Rwanda&quot;,
+    &quot;Réunion&quot;,
+    &quot;Saint Barthélemy&quot;,
+    &quot;Saint Helena, Ascension and Tristan da Cunha&quot;,
+    &quot;Saint Kitts and Nevis&quot;,
+    &quot;Saint Lucia&quot;,
+    &quot;Saint Martin (French part)&quot;,
+    &quot;Saint Pierre and Miquelon&quot;,
+    &quot;Saint Vincent and the Grenadines&quot;,
+    &quot;Samoa&quot;,
+    &quot;San Marino&quot;,
+    &quot;Sao Tome and Principe&quot;,
+    &quot;Saudi Arabia&quot;,
+    &quot;Senegal&quot;,
+    &quot;Serbia&quot;,
+    &quot;Seychelles&quot;,
+    &quot;Sierra Leone&quot;,
+    &quot;Singapore&quot;,
+    &quot;Sint Maarten (Dutch part)&quot;,
+    &quot;Slovakia&quot;,
+    &quot;Slovenia&quot;,
+    &quot;Solomon Islands&quot;,
+    &quot;Somalia&quot;,
+    &quot;South Africa&quot;,
+    &quot;South Georgia and the South Sandwich Islands&quot;,
+    &quot;South Sudan&quot;,
+    &quot;Spain&quot;,
+    &quot;Sri Lanka&quot;,
+    &quot;Sudan (the)&quot;,
+    &quot;Suriname&quot;,
+    &quot;Svalbard and Jan Mayen&quot;,
+    &quot;Sweden&quot;,
+    &quot;Switzerland&quot;,
+    &quot;Syrian Arab Republic&quot;,
+    &quot;Taiwan&quot;,
+    &quot;Tajikistan&quot;,
+    &quot;Tanzania, United Republic of&quot;,
+    &quot;Thailand&quot;,
+    &quot;Timor-Leste&quot;,
+    &quot;Togo&quot;,
+    &quot;Tokelau&quot;,
+    &quot;Tonga&quot;,
+    &quot;Trinidad and Tobago&quot;,
+    &quot;Tunisia&quot;,
+    &quot;Turkey&quot;,
+    &quot;Turkmenistan&quot;,
+    &quot;Turks and Caicos Islands (the)&quot;,
+    &quot;Tuvalu&quot;,
+    &quot;Uganda&quot;,
+    &quot;Ukraine&quot;,
+    &quot;United Arab Emirates (the)&quot;,
+    &quot;United Kingdom of Great Britain and Northern Ireland (the)&quot;,
+    &quot;United States Minor Outlying Islands (the)&quot;,
+    &quot;United States of America (the)&quot;,
+    &quot;Uruguay&quot;,
+    &quot;Uzbekistan&quot;,
+    &quot;Vanuatu&quot;,
+    &quot;Venezuela (Bolivarian Republic of)&quot;,
+    &quot;Viet Nam&quot;,
+    &quot;Virgin Islands (British)&quot;,
+    &quot;Virgin Islands (U.S.)&quot;,
+    &quot;Wallis and Futuna&quot;,
+    &quot;Western Sahara&quot;,
+    &quot;Yemen&quot;,
+    &quot;Zambia&quot;,
+    &quot;Zimbabwe&quot;,
+    &quot;Åland Islands&quot;
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/auth/register/register.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="registerForm"></a>
+                        <span class="name">
+                            <b>
+                            registerForm</b>
+                            <a href="#registerForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/auth/register/register.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="f"></a>
+                        <span class="name"><b>f</b><a href="#f"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>f()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/components/auth/register/register.component.ts:35</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isValid"></a>
+                        <span class="name"><b>isValid</b><a href="#isValid"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isValid()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/auth/register/register.component.ts:37</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+
+import { AuthService } from &#x27;src/app/core/services/auth.service&#x27;;
+
+@Component({
+  selector: &#x27;app-register&#x27;,
+  templateUrl: &#x27;./register.component.html&#x27;,
+  styleUrls: [&#x27;./register.component.css&#x27;]
+})
+export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
+
+  constructor(private fb: FormBuilder, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    this.registerForm &#x3D; this.fb.group({
+      firstName: [&#x27;&#x27;, [Validators.required]],
+      lastName: [&#x27;&#x27;, [Validators.required]],
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      city: [&#x27;&#x27;, [Validators.required]],
+      country: [&#x27;Bulgaria&#x27;, [Validators.required]],
+      gender: [&#x27;Male&#x27;, [Validators.required]],
+      password: [&#x27;&#x27;, [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+      rePassword: [&#x27;&#x27;, [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
+    })
+  }
+
+  register(): void {
+    let email &#x3D; this.f.email.value;
+    let pass &#x3D; this.f.password.value;
+    this.authService.signUp(email, pass, this.registerForm.value);
+  }
+
+  get f() { return this.registerForm.controls; }
+
+  get isValid() { return this.registerForm.status &#x3D;&#x3D;&#x3D; &quot;VALID&quot;; }
+
+  countryList &#x3D; [
+    &quot;Afghanistan&quot;,
+    &quot;Albania&quot;,
+    &quot;Algeria&quot;,
+    &quot;American Samoa&quot;,
+    &quot;Andorra&quot;,
+    &quot;Angola&quot;,
+    &quot;Anguilla&quot;,
+    &quot;Antarctica&quot;,
+    &quot;Antigua and Barbuda&quot;,
+    &quot;Argentina&quot;,
+    &quot;Armenia&quot;,
+    &quot;Aruba&quot;,
+    &quot;Australia&quot;,
+    &quot;Austria&quot;,
+    &quot;Azerbaijan&quot;,
+    &quot;Bahamas (the)&quot;,
+    &quot;Bahrain&quot;,
+    &quot;Bangladesh&quot;,
+    &quot;Barbados&quot;,
+    &quot;Belarus&quot;,
+    &quot;Belgium&quot;,
+    &quot;Belize&quot;,
+    &quot;Benin&quot;,
+    &quot;Bermuda&quot;,
+    &quot;Bhutan&quot;,
+    &quot;Bolivia (Plurinational State of)&quot;,
+    &quot;Bonaire, Sint Eustatius and Saba&quot;,
+    &quot;Bosnia and Herzegovina&quot;,
+    &quot;Botswana&quot;,
+    &quot;Bouvet Island&quot;,
+    &quot;Brazil&quot;,
+    &quot;British Indian Ocean Territory (the)&quot;,
+    &quot;Brunei Darussalam&quot;,
+    &quot;Bulgaria&quot;,
+    &quot;Burkina Faso&quot;,
+    &quot;Burundi&quot;,
+    &quot;Cabo Verde&quot;,
+    &quot;Cambodia&quot;,
+    &quot;Cameroon&quot;,
+    &quot;Canada&quot;,
+    &quot;Cayman Islands (the)&quot;,
+    &quot;Central African Republic (the)&quot;,
+    &quot;Chad&quot;,
+    &quot;Chile&quot;,
+    &quot;China&quot;,
+    &quot;Christmas Island&quot;,
+    &quot;Cocos (Keeling) Islands (the)&quot;,
+    &quot;Colombia&quot;,
+    &quot;Comoros (the)&quot;,
+    &quot;Congo (the Democratic Republic of the)&quot;,
+    &quot;Congo (the)&quot;,
+    &quot;Cook Islands (the)&quot;,
+    &quot;Costa Rica&quot;,
+    &quot;Croatia&quot;,
+    &quot;Cuba&quot;,
+    &quot;Curaçao&quot;,
+    &quot;Cyprus&quot;,
+    &quot;Czechia&quot;,
+    &quot;Côte d&#x27;Ivoire&quot;,
+    &quot;Denmark&quot;,
+    &quot;Djibouti&quot;,
+    &quot;Dominica&quot;,
+    &quot;Dominican Republic (the)&quot;,
+    &quot;Ecuador&quot;,
+    &quot;Egypt&quot;,
+    &quot;El Salvador&quot;,
+    &quot;Equatorial Guinea&quot;,
+    &quot;Eritrea&quot;,
+    &quot;Estonia&quot;,
+    &quot;Eswatini&quot;,
+    &quot;Ethiopia&quot;,
+    &quot;Falkland Islands (the) [Malvinas]&quot;,
+    &quot;Faroe Islands (the)&quot;,
+    &quot;Fiji&quot;,
+    &quot;Finland&quot;,
+    &quot;France&quot;,
+    &quot;French Guiana&quot;,
+    &quot;French Polynesia&quot;,
+    &quot;French Southern Territories (the)&quot;,
+    &quot;Gabon&quot;,
+    &quot;Gambia (the)&quot;,
+    &quot;Georgia&quot;,
+    &quot;Germany&quot;,
+    &quot;Ghana&quot;,
+    &quot;Gibraltar&quot;,
+    &quot;Greece&quot;,
+    &quot;Greenland&quot;,
+    &quot;Grenada&quot;,
+    &quot;Guadeloupe&quot;,
+    &quot;Guam&quot;,
+    &quot;Guatemala&quot;,
+    &quot;Guernsey&quot;,
+    &quot;Guinea&quot;,
+    &quot;Guinea-Bissau&quot;,
+    &quot;Guyana&quot;,
+    &quot;Haiti&quot;,
+    &quot;Heard Island and McDonald Islands&quot;,
+    &quot;Holy See (the)&quot;,
+    &quot;Honduras&quot;,
+    &quot;Hong Kong&quot;,
+    &quot;Hungary&quot;,
+    &quot;Iceland&quot;,
+    &quot;India&quot;,
+    &quot;Indonesia&quot;,
+    &quot;Iran (Islamic Republic of)&quot;,
+    &quot;Iraq&quot;,
+    &quot;Ireland&quot;,
+    &quot;Isle of Man&quot;,
+    &quot;Israel&quot;,
+    &quot;Italy&quot;,
+    &quot;Jamaica&quot;,
+    &quot;Japan&quot;,
+    &quot;Jersey&quot;,
+    &quot;Jordan&quot;,
+    &quot;Kazakhstan&quot;,
+    &quot;Kenya&quot;,
+    &quot;Kiribati&quot;,
+    &quot;Korea (the Democratic People&#x27;s Republic of)&quot;,
+    &quot;Korea (the Republic of)&quot;,
+    &quot;Kuwait&quot;,
+    &quot;Kyrgyzstan&quot;,
+    &quot;Lao People&#x27;s Democratic Republic (the)&quot;,
+    &quot;Latvia&quot;,
+    &quot;Lebanon&quot;,
+    &quot;Lesotho&quot;,
+    &quot;Liberia&quot;,
+    &quot;Libya&quot;,
+    &quot;Liechtenstein&quot;,
+    &quot;Lithuania&quot;,
+    &quot;Luxembourg&quot;,
+    &quot;Macao&quot;,
+    &quot;Madagascar&quot;,
+    &quot;Malawi&quot;,
+    &quot;Malaysia&quot;,
+    &quot;Maldives&quot;,
+    &quot;Mali&quot;,
+    &quot;Malta&quot;,
+    &quot;Marshall Islands (the)&quot;,
+    &quot;Martinique&quot;,
+    &quot;Mauritania&quot;,
+    &quot;Mauritius&quot;,
+    &quot;Mayotte&quot;,
+    &quot;Mexico&quot;,
+    &quot;Micronesia (Federated States of)&quot;,
+    &quot;Moldova (the Republic of)&quot;,
+    &quot;Monaco&quot;,
+    &quot;Mongolia&quot;,
+    &quot;Montenegro&quot;,
+    &quot;Montserrat&quot;,
+    &quot;Morocco&quot;,
+    &quot;Mozambique&quot;,
+    &quot;Myanmar&quot;,
+    &quot;Namibia&quot;,
+    &quot;Nauru&quot;,
+    &quot;Nepal&quot;,
+    &quot;Netherlands (the)&quot;,
+    &quot;New Caledonia&quot;,
+    &quot;New Zealand&quot;,
+    &quot;Nicaragua&quot;,
+    &quot;Niger (the)&quot;,
+    &quot;Nigeria&quot;,
+    &quot;Niue&quot;,
+    &quot;Norfolk Island&quot;,
+    &quot;Northern Mariana Islands (the)&quot;,
+    &quot;Norway&quot;,
+    &quot;Oman&quot;,
+    &quot;Pakistan&quot;,
+    &quot;Palau&quot;,
+    &quot;Palestine, State of&quot;,
+    &quot;Panama&quot;,
+    &quot;Papua New Guinea&quot;,
+    &quot;Paraguay&quot;,
+    &quot;Peru&quot;,
+    &quot;Philippines (the)&quot;,
+    &quot;Pitcairn&quot;,
+    &quot;Poland&quot;,
+    &quot;Portugal&quot;,
+    &quot;Puerto Rico&quot;,
+    &quot;Qatar&quot;,
+    &quot;Republic of North Macedonia&quot;,
+    &quot;Romania&quot;,
+    &quot;Russian Federation (the)&quot;,
+    &quot;Rwanda&quot;,
+    &quot;Réunion&quot;,
+    &quot;Saint Barthélemy&quot;,
+    &quot;Saint Helena, Ascension and Tristan da Cunha&quot;,
+    &quot;Saint Kitts and Nevis&quot;,
+    &quot;Saint Lucia&quot;,
+    &quot;Saint Martin (French part)&quot;,
+    &quot;Saint Pierre and Miquelon&quot;,
+    &quot;Saint Vincent and the Grenadines&quot;,
+    &quot;Samoa&quot;,
+    &quot;San Marino&quot;,
+    &quot;Sao Tome and Principe&quot;,
+    &quot;Saudi Arabia&quot;,
+    &quot;Senegal&quot;,
+    &quot;Serbia&quot;,
+    &quot;Seychelles&quot;,
+    &quot;Sierra Leone&quot;,
+    &quot;Singapore&quot;,
+    &quot;Sint Maarten (Dutch part)&quot;,
+    &quot;Slovakia&quot;,
+    &quot;Slovenia&quot;,
+    &quot;Solomon Islands&quot;,
+    &quot;Somalia&quot;,
+    &quot;South Africa&quot;,
+    &quot;South Georgia and the South Sandwich Islands&quot;,
+    &quot;South Sudan&quot;,
+    &quot;Spain&quot;,
+    &quot;Sri Lanka&quot;,
+    &quot;Sudan (the)&quot;,
+    &quot;Suriname&quot;,
+    &quot;Svalbard and Jan Mayen&quot;,
+    &quot;Sweden&quot;,
+    &quot;Switzerland&quot;,
+    &quot;Syrian Arab Republic&quot;,
+    &quot;Taiwan&quot;,
+    &quot;Tajikistan&quot;,
+    &quot;Tanzania, United Republic of&quot;,
+    &quot;Thailand&quot;,
+    &quot;Timor-Leste&quot;,
+    &quot;Togo&quot;,
+    &quot;Tokelau&quot;,
+    &quot;Tonga&quot;,
+    &quot;Trinidad and Tobago&quot;,
+    &quot;Tunisia&quot;,
+    &quot;Turkey&quot;,
+    &quot;Turkmenistan&quot;,
+    &quot;Turks and Caicos Islands (the)&quot;,
+    &quot;Tuvalu&quot;,
+    &quot;Uganda&quot;,
+    &quot;Ukraine&quot;,
+    &quot;United Arab Emirates (the)&quot;,
+    &quot;United Kingdom of Great Britain and Northern Ireland (the)&quot;,
+    &quot;United States Minor Outlying Islands (the)&quot;,
+    &quot;United States of America (the)&quot;,
+    &quot;Uruguay&quot;,
+    &quot;Uzbekistan&quot;,
+    &quot;Vanuatu&quot;,
+    &quot;Venezuela (Bolivarian Republic of)&quot;,
+    &quot;Viet Nam&quot;,
+    &quot;Virgin Islands (British)&quot;,
+    &quot;Virgin Islands (U.S.)&quot;,
+    &quot;Wallis and Futuna&quot;,
+    &quot;Western Sahara&quot;,
+    &quot;Yemen&quot;,
+    &quot;Zambia&quot;,
+    &quot;Zimbabwe&quot;,
+    &quot;Åland Islands&quot;
+  ];
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;br&gt;
+    &lt;hr&gt;
+    &lt;div class&#x3D;&quot;row justify-content-center wrapper fadeInDown&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-6&quot; id&#x3D;&quot;formContent&quot;&gt;
+            &lt;div class&#x3D;&quot;card&quot;&gt;
+                &lt;header class&#x3D;&quot;card-header&quot;&gt;
+                    &lt;a routerLink&#x3D;&quot;/login&quot; class&#x3D;&quot;float-right btn btn-outline-primary mt-1&quot;&gt;Log in&lt;/a&gt;
+                    &lt;h4 class&#x3D;&quot;card-title mt-2&quot;&gt;Sign up&lt;/h4&gt;
+                &lt;/header&gt;
+                &lt;article class&#x3D;&quot;card-body&quot;&gt;
+                    &lt;form [formGroup]&#x3D;&quot;registerForm&quot; (submit)&#x3D;&quot;register()&quot;&gt;
+                        &lt;div class&#x3D;&quot;form-row&quot;&gt;
+                            &lt;div class&#x3D;&quot;col form-group&quot;&gt;
+                                &lt;label&gt;First name &lt;/label&gt;
+                                &lt;input formControlName&#x3D;&quot;firstName&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;&quot;&gt;
+                                &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.firstName.errors?.required &amp;&amp; f.firstName.touched&quot;&gt;
+                                    First name is required
+                                &lt;/div&gt;
+                            &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                            &lt;div class&#x3D;&quot;col form-group&quot;&gt;
+                                &lt;label&gt;Last name&lt;/label&gt;
+                                &lt;input formControlName&#x3D;&quot;lastName&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot; &quot;&gt;
+                                &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.lastName.errors?.required &amp;&amp; f.lastName.touched&quot;&gt;
+                                    Last name is required
+                                &lt;/div&gt;
+                            &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;/div&gt; &lt;!-- form-row end.// --&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;label&gt;Email address&lt;/label&gt;
+                            &lt;input formControlName&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;&quot;&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.email.errors?.required &amp;&amp; f.email.touched&quot;&gt;
+                                Email is required
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.email.errors?.email &amp;&amp; f.email.touched&quot;&gt;
+                                Please enter a valid email
+                            &lt;/div&gt;
+                            &lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;We&#x27;ll never share your email with anyone else.&lt;/small&gt;
+                        &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;label class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                &lt;input formControlName&#x3D;&quot;gender&quot; class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;gender&quot; value&#x3D;&quot;Male&quot;&gt;
+                                &lt;span class&#x3D;&quot;form-check-label&quot;&gt; Male &lt;/span&gt;
+                            &lt;/label&gt;
+                            &lt;label class&#x3D;&quot;form-check form-check-inline&quot;&gt;
+                                &lt;input formControlName&#x3D;&quot;gender&quot; class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;gender&quot; value&#x3D;&quot;Female&quot;&gt;
+                                &lt;span class&#x3D;&quot;form-check-label&quot;&gt; Female&lt;/span&gt;
+                            &lt;/label&gt;
+                        &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;div class&#x3D;&quot;form-row&quot;&gt;
+                            &lt;div class&#x3D;&quot;form-group col-md-6&quot;&gt;
+                                &lt;label&gt;City&lt;/label&gt;
+                                &lt;input formControlName&#x3D;&quot;city&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot;&gt;
+                                &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.city.errors?.required &amp;&amp; f.city.touched&quot;&gt;
+                                    City is required
+                                &lt;/div&gt;
+                            &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                            &lt;div class&#x3D;&quot;form-group col-md-6&quot; &gt;
+                                &lt;label&gt;Country&lt;/label&gt;
+                                &lt;select formControlName&#x3D;&quot;country&quot; id&#x3D;&quot;inputState&quot; class&#x3D;&quot;form-control&quot;&gt;
+                                    &lt;option value&#x3D;&quot;&quot; selected&gt; Bulgaria&lt;/option&gt;
+                                    &lt;option *ngFor&#x3D;&quot;let country of countryList&quot;&gt;{{country}}&lt;/option&gt;
+                                &lt;/select&gt;
+                            &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;/div&gt; &lt;!-- form-row.// --&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;label&gt;Create password&lt;/label&gt;
+                            &lt;input formControlName&#x3D;&quot;password&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot;&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.password.errors?.required &amp;&amp; f.password.touched&quot;&gt;
+                                Password is required
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.password.errors?.minlength &amp;&amp; f.password.touched&quot;&gt;
+                                Password can not be less than 6 symbols
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;f.password.errors?.maxlength &amp;&amp; f.password.touched&quot;&gt;
+                                Password can not be more than 15 symbols
+                            &lt;/div&gt;
+                        &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;label&gt;Repeat password&lt;/label&gt;
+                            &lt;input formControlName&#x3D;&quot;rePassword&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot;&gt;
+                            &lt;div class&#x3D;&quot;alert alert-danger fadeIn&quot; *ngIf&#x3D;&quot;registerForm.value.password !&#x3D;&#x3D; registerForm.value.rePassword &amp;&amp; f.rePassword.touched&quot;&gt;
+                                Passwords do not match!
+                            &lt;/div&gt;
+
+                        &lt;/div&gt; &lt;!-- form-group end.// --&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;button [disabled]&#x3D;&quot;!isValid&quot; type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary btn-block&quot;&gt; Sign Up &lt;/button&gt;
+                        &lt;/div&gt; &lt;!-- form-group// --&gt;
+                        &lt;small class&#x3D;&quot;text-muted&quot;&gt;By clicking the &#x27;Sign Up&#x27; button, you confirm that you accept our &lt;br&gt;
+                            Terms of use and Privacy Policy.&lt;/small&gt;
+                    &lt;/form&gt;
+                &lt;/article&gt; &lt;!-- card-body end .// --&gt;
+                &lt;div class&#x3D;&quot;border-top card-body text-center&quot;&gt;Have an account? &lt;a routerLink&#x3D;&quot;/login&quot;&gt;Log In&lt;/a&gt;&lt;/div&gt;
+            &lt;/div&gt; &lt;!-- card.// --&gt;
+        &lt;/div&gt; &lt;!-- col.//--&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./register.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  #formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .alert.alert-danger {
+    margin-top: 0.3rem;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+    background: #728188;
+  }
+  
+  @-webkit-keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  
+  .fadeIn {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+  
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+  
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">    <br>    <hr>    <div class="row justify-content-center wrapper fadeInDown">        <div class="col-md-6" id="formContent">            <div class="card">                <header class="card-header">                    <a routerLink="/login" class="float-right btn btn-outline-primary mt-1">Log in</a>                    <h4 class="card-title mt-2">Sign up</h4>                </header>                <article class="card-body">                    <form [formGroup]="registerForm" (submit)="register()">                        <div class="form-row">                            <div class="col form-group">                                <label>First name </label>                                <input formControlName="firstName" type="text" class="form-control" placeholder="">                                <div class="alert alert-danger fadeIn" *ngIf="f.firstName.errors?.required && f.firstName.touched">                                    First name is required                                </div>                            </div> <!-- form-group end.// -->                            <div class="col form-group">                                <label>Last name</label>                                <input formControlName="lastName" type="text" class="form-control" placeholder=" ">                                <div class="alert alert-danger fadeIn" *ngIf="f.lastName.errors?.required && f.lastName.touched">                                    Last name is required                                </div>                            </div> <!-- form-group end.// -->                        </div> <!-- form-row end.// -->                        <div class="form-group">                            <label>Email address</label>                            <input formControlName="email" type="email" class="form-control" placeholder="">                            <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.required && f.email.touched">                                Email is required                            </div>                            <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.email && f.email.touched">                                Please enter a valid email                            </div>                            <small class="form-text text-muted">We\'ll never share your email with anyone else.</small>                        </div> <!-- form-group end.// -->                        <div class="form-group">                            <label class="form-check form-check-inline">                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" value="Male">                                <span class="form-check-label"> Male </span>                            </label>                            <label class="form-check form-check-inline">                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" value="Female">                                <span class="form-check-label"> Female</span>                            </label>                        </div> <!-- form-group end.// -->                        <div class="form-row">                            <div class="form-group col-md-6">                                <label>City</label>                                <input formControlName="city" type="text" class="form-control">                                <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.required && f.city.touched">                                    City is required                                </div>                            </div> <!-- form-group end.// -->                            <div class="form-group col-md-6" >                                <label>Country</label>                                <select formControlName="country" id="inputState" class="form-control">                                    <option value="" selected> Bulgaria</option>                                    <option *ngFor="let country of countryList">{{country}}</option>                                </select>                            </div> <!-- form-group end.// -->                        </div> <!-- form-row.// -->                        <div class="form-group">                            <label>Create password</label>                            <input formControlName="password" class="form-control" type="password">                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.required && f.password.touched">                                Password is required                            </div>                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.minlength && f.password.touched">                                Password can not be less than 6 symbols                            </div>                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.maxlength && f.password.touched">                                Password can not be more than 15 symbols                            </div>                        </div> <!-- form-group end.// -->                        <div class="form-group">                            <label>Repeat password</label>                            <input formControlName="rePassword" class="form-control" type="password">                            <div class="alert alert-danger fadeIn" *ngIf="registerForm.value.password !== registerForm.value.rePassword && f.rePassword.touched">                                Passwords do not match!                            </div>                        </div> <!-- form-group end.// -->                        <div class="form-group">                            <button [disabled]="!isValid" type="submit" class="btn btn-primary btn-block"> Sign Up </button>                        </div> <!-- form-group// -->                        <small class="text-muted">By clicking the \'Sign Up\' button, you confirm that you accept our <br>                            Terms of use and Privacy Policy.</small>                    </form>                </article> <!-- card-body end .// -->                <div class="border-top card-body text-center">Have an account? <a routerLink="/login">Log In</a></div>            </div> <!-- card.// -->        </div> <!-- col.//--></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomePageTripComponent', 'selector': 'app-home-page-trip'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TripComponent', 'selector': 'app-trip'},{'name': 'TripCreateComponent', 'selector': 'app-trip-create'},{'name': 'TripDetailComponent', 'selector': 'app-trip-detail'},{'name': 'TripEditComponent', 'selector': 'app-trip-edit'},{'name': 'TripListComponent', 'selector': 'app-trip-list'},{'name': 'TripMembersComponent', 'selector': 'app-trip-members'},{'name': 'TripSearchFormComponent', 'selector': 'app-trip-search-form'},{'name': 'UserMessageComponent', 'selector': 'app-user-message'},{'name': 'UserMessagesComponent', 'selector': 'app-user-messages'},{'name': 'UserNotificationFormComponent', 'selector': 'app-user-notification-form'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserTripComponent', 'selector': 'app-user-trip'},{'name': 'UserUploadPhotoComponent', 'selector': 'app-user-upload-photo'}];
+    var DIRECTIVES = [{'name': 'HideElementDirective', 'selector': '[appHideElement]'},{'name': 'ReadOnlyDirective', 'selector': '[appReadOnly]'}];
+    var ACTUAL_COMPONENT = {'name': 'RegisterComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'RegisterComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

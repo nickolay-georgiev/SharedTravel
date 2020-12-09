@@ -1,0 +1,353 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>shared-travel documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">shared-travel documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>HomePageTripComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/home/home-page-trip/home-page-trip.component.ts</code>
+</p>
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home-page-trip</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./home-page-trip.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home-page-trip.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#trip">trip</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/home/home-page-trip/home-page-trip.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="trip"></a>
+                        <b>trip</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ITrip.html" target="_self" >ITrip</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/home/home-page-trip/home-page-trip.component.ts:12</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { ITrip } from &#x27;src/app/core/interfaces/trip&#x27;;
+
+@Component({
+  selector: &#x27;app-home-page-trip&#x27;,
+  templateUrl: &#x27;./home-page-trip.component.html&#x27;,
+  styleUrls: [&#x27;./home-page-trip.component.css&#x27;]
+})
+export class HomePageTripComponent {
+
+  @Input()
+  trip: ITrip;
+
+  constructor() { }
+  
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;card&quot;&gt;
+    &lt;div class&#x3D;&quot;bg-image hover-overlay ripple&quot; data-ripple-color&#x3D;&quot;light&quot;&gt;
+        &lt;img src&#x3D;{{trip.imgPath}} class&#x3D;&quot;img-fluid&quot; /&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+        &lt;h5 class&#x3D;&quot;card-title&quot;&gt;{{trip.country | titlecase}}&lt;/h5&gt;
+        &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            {{trip.description | slice : 0 : 20}} ...
+        &lt;/p&gt;
+        &lt;a [routerLink]&#x3D;&quot;[&#x27;/trip/list&#x27;, trip.id]&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Learn More&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./home-page-trip.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.header {
+    position: relative;
+}
+
+.header&gt;h1 {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(247 247 247);
+    text-shadow: 0px 0px 20px #c1c1c1;
+    font-size: 4.6rem;
+    text-align: center;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 200px;
+}
+
+.card-title {
+    font-size: 18px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="card">    <div class="bg-image hover-overlay ripple" data-ripple-color="light">        <img src={{trip.imgPath}} class="img-fluid" />    </div>    <div class="card-body">        <h5 class="card-title">{{trip.country | titlecase}}</h5>        <p class="card-text">            {{trip.description | slice : 0 : 20}} ...        </p>        <a [routerLink]="[\'/trip/list\', trip.id]" class="btn btn-primary">Learn More</a>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'HomePageTripComponent', 'selector': 'app-home-page-trip'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'TripComponent', 'selector': 'app-trip'},{'name': 'TripCreateComponent', 'selector': 'app-trip-create'},{'name': 'TripDetailComponent', 'selector': 'app-trip-detail'},{'name': 'TripEditComponent', 'selector': 'app-trip-edit'},{'name': 'TripListComponent', 'selector': 'app-trip-list'},{'name': 'TripMembersComponent', 'selector': 'app-trip-members'},{'name': 'TripSearchFormComponent', 'selector': 'app-trip-search-form'},{'name': 'UserMessageComponent', 'selector': 'app-user-message'},{'name': 'UserMessagesComponent', 'selector': 'app-user-messages'},{'name': 'UserNotificationFormComponent', 'selector': 'app-user-notification-form'},{'name': 'UserProfileComponent', 'selector': 'app-user-profile'},{'name': 'UserTripComponent', 'selector': 'app-user-trip'},{'name': 'UserUploadPhotoComponent', 'selector': 'app-user-upload-photo'}];
+    var DIRECTIVES = [{'name': 'HideElementDirective', 'selector': '[appHideElement]'},{'name': 'ReadOnlyDirective', 'selector': '[appReadOnly]'}];
+    var ACTUAL_COMPONENT = {'name': 'HomePageTripComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomePageTripComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

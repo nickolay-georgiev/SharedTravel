@@ -1,0 +1,909 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>shared-travel documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">shared-travel documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>UserService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/services/user.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#downloadURL">downloadURL</a>
+                            </li>
+                            <li>
+                                <a href="#task">task</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteUserMessage">deleteUserMessage</a>
+                            </li>
+                            <li>
+                                <a href="#getUserMessages">getUserMessages</a>
+                            </li>
+                            <li>
+                                <a href="#notifyUsers">notifyUsers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#updateUserAvatar">updateUserAvatar</a>
+                            </li>
+                            <li>
+                                <a href="#updateUserData">updateUserData</a>
+                            </li>
+                            <li>
+                                <a href="#updateUserPhoto">updateUserPhoto</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#userId">userId</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(afs: AngularFirestore, storage: AngularFireStorage, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/AuthService.html">AuthService</a>, snackBar: MatSnackBar)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/services/user.service.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>afs</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFirestore</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>storage</td>
+                                                  
+                                                        <td>
+                                                                    <code>AngularFireStorage</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUserMessage"></a>
+                    <span class="name">
+                        <b>
+                            deleteUserMessage
+                        </b>
+                        <a href="#deleteUserMessage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteUserMessage(message: <a href="../interfaces/IMessage.html">IMessage</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/core/services/user.service.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="../interfaces/IMessage.html" target="_self" >IMessage</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getUserMessages"></a>
+                    <span class="name">
+                        <b>
+                            getUserMessages
+                        </b>
+                        <a href="#getUserMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getUserMessages()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/core/services/user.service.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/IMessage.html" target="_self" >Observable&lt;IMessage[]&gt;</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notifyUsers"></a>
+                    <span class="name">
+                        <b>
+                            notifyUsers
+                        </b>
+                        <a href="#notifyUsers"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>notifyUsers(members: string[], message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/core/services/user.service.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>members</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserAvatar"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            updateUserAvatar
+                        </b>
+                        <a href="#updateUserAvatar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>updateUserAvatar(imgUrl: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/core/services/user.service.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>imgUrl</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserData"></a>
+                    <span class="name">
+                        <b>
+                            updateUserData
+                        </b>
+                        <a href="#updateUserData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateUserData(data: <a href="../interfaces/IUser.html">IUser</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/core/services/user.service.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                                <code><a href="../interfaces/IUser.html" target="_self" >IUser</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateUserPhoto"></a>
+                    <span class="name">
+                        <b>
+                            updateUserPhoto
+                        </b>
+                        <a href="#updateUserPhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateUserPhoto(photo: File)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/core/services/user.service.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>photo</td>
+                                    <td>
+                                            <code>File</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;UploadTaskSnapshot&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="downloadURL"></a>
+                        <span class="name">
+                            <b>
+                            downloadURL</b>
+                            <a href="#downloadURL"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/core/services/user.service.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="task"></a>
+                        <span class="name">
+                            <b>
+                            task</b>
+                            <a href="#task"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>AngularFireUploadTask</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/services/user.service.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userId"></a>
+                        <span class="name"><b>userId</b><a href="#userId"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>userId()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/core/services/user.service.ts:103</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { AngularFirestore } from &#x27;@angular/fire/firestore&#x27;;
+import { UploadTaskSnapshot } from &#x27;@angular/fire/storage/interfaces&#x27;;
+import { AngularFireStorage, AngularFireUploadTask } from &#x27;@angular/fire/storage&#x27;;
+import firebase from &#x27;firebase/app&#x27;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+
+import { Observable } from &#x27;rxjs&#x27;;
+import { finalize, map } from &#x27;rxjs/operators&#x27;;
+
+import { snackBarError, snackBarInfo } from &#x27;../custom-functions/mat-snackbar-functions&#x27;;
+
+import { AuthService } from &#x27;./auth.service&#x27;;
+import { IMessage } from &#x27;../interfaces/message&#x27;;
+import { IUser } from &#x27;../interfaces/user&#x27;;
+
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class UserService {
+
+  task: AngularFireUploadTask;
+  downloadURL: string;
+
+  constructor(
+    private afs: AngularFirestore,
+    private storage: AngularFireStorage,
+    private router: Router,
+    private authService: AuthService,
+    private snackBar: MatSnackBar
+  ) { }
+
+  updateUserData(data: IUser): void {
+    this.afs.collection(&#x27;users&#x27;).doc(this.userId).update(data).then(() &#x3D;&gt; {
+      snackBarInfo(&quot;User data successfully updated.&quot;, this.snackBar);
+      this.router.navigate([&#x27;/user/profile&#x27;]);
+    }).catch((error) &#x3D;&gt; {
+      snackBarError(error.message, this.snackBar);
+    });
+  }
+
+  updateUserPhoto(photo: File): Observable&lt;UploadTaskSnapshot&gt; {
+    const path &#x3D; &#x60;user-images/${this.userId}&#x60;;
+    const ref &#x3D; this.storage.ref(path);
+    this.task &#x3D; this.storage.upload(path, photo);
+    return this.task.snapshotChanges().pipe(
+      finalize(async () &#x3D;&gt; {
+        this.downloadURL &#x3D; await ref.getDownloadURL().toPromise();
+        this.updateUserAvatar(this.downloadURL);
+      }),
+    );
+  }
+
+  notifyUsers(members: string[], message: string) {
+    let date &#x3D; new Date().toString();
+    members &#x3D; members.filter(x &#x3D;&gt; x !&#x3D;&#x3D; this.userId);
+    members.forEach(member &#x3D;&gt; {
+      this.afs.collection(&#x27;users-messages&#x27;).doc(member).update({
+        notifications: firebase.firestore.FieldValue.arrayUnion(
+          {
+            description: message[&quot;value&quot;].message,
+            createdOn: date,
+            creator: this.authService.userEmail
+          }
+        )
+      }).then(() &#x3D;&gt; {
+        snackBarInfo(&quot;Message was sent.&quot;, this.snackBar);
+      }).catch(error &#x3D;&gt; {
+        snackBarError(error.message, this.snackBar);
+      })
+    })
+  }
+
+  getUserMessages(): Observable&lt;IMessage[]&gt; {
+    return this.afs.collection&lt;IMessage&gt;(&#x27;users-messages&#x27;).doc(this.userId)
+      .snapshotChanges()
+      .pipe(map(res &#x3D;&gt; {
+        return res.payload.data()[&#x27;notifications&#x27;];
+      }))
+  }
+
+  deleteUserMessage(message: IMessage) {
+    this.afs.collection(&#x27;users-messages&#x27;).doc(this.userId).update({
+      notifications: firebase.firestore.FieldValue.arrayRemove(
+        message)
+    }).then(() &#x3D;&gt; {
+      snackBarInfo(&quot;Message successfully deleted.&quot;, this.snackBar);
+    }).catch((error) &#x3D;&gt; {
+      snackBarError(error.message, this.snackBar);
+    });
+  }
+
+  private updateUserAvatar(imgUrl: string) {
+    this.afs.collection&lt;IUser&gt;(&#x27;users&#x27;).doc(this.userId).update({ imgUrl: imgUrl })
+      .then(() &#x3D;&gt; {
+        snackBarInfo(&quot;Enjoy your new photo.&quot;, this.snackBar);
+        this.router.navigate([&#x27;/user/edit&#x27;]);
+      });
+  }
+
+  get userId() {
+    return this.authService.currentUserId;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

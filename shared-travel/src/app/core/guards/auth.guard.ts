@@ -4,9 +4,7 @@ import { Router, CanLoad, Route, UrlSegment, CanActivate, ActivatedRouteSnapshot
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthGuard implements CanLoad, CanActivate {
     constructor(
         private afAuth: AngularFireAuth,
