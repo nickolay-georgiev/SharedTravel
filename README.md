@@ -36,4 +36,5 @@ Add new trip, edit their own trips, join to other trips, send notification messa
 
 
 **Routing Schema**
+
 ![alt text](https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/diagrams%2FroutingSchema.jpg?alt=media&token=de218e62-a2bd-4302-8c1a-ea902802db34)
