@@ -1,5 +1,5 @@
 ## 👓 Project Introduction
-**Shared Travel Website** is my defense project for **Angular** course at SoftUni (November 2020).
+**Shared Travel Website** is my defense project for **Angular** course at [SoftUni](https://softuni.bg/) (November 2020).
 
 ### ✏️ Overview
 **Shared Travel** is a website where people can organize joint trips. The main idea is to create a place where you can find new friends with similar interests to yours, with whom you can be useful to each other later in real life.
