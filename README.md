@@ -30,3 +30,10 @@ Add new trip, edit their own trips, join to other trips, send notification messa
 - rxjs : ~6.6.0    
 - tslib : ^2.0.0     
 - zone.js : ~0.10.2    
+
+**Moduls Diagram**
+![alt text](https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/diagrams%2Fschema.jpg?alt=media&token=36257f04-106e-4af0-a803-dd00c84d0c03)
+
+
+**Routing Schema**
+![alt text](https://firebasestorage.googleapis.com/v0/b/travel-c6c41.appspot.com/o/diagrams%2FroutingSchema.jpg?alt=media&token=de218e62-a2bd-4302-8c1a-ea902802db34)
