@@ -4,17 +4,15 @@ import {
     Resolve,
     RouterStateSnapshot,
 } from '@angular/router'
-import { AuthService } from '../services/auth.service'
+import { UserService } from '../services/user.service';
 
-@Injectable({
-    providedIn: 'root',
-  })
-export class UserResolver implements Resolve<boolean> {
+@Injectable()
+export class UserMessagesResolver implements Resolve<boolean> {
 
-    constructor(private authService: AuthService) { }
+    constructor(private userService: UserService) { }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        this.authService.getUserData();
+        this.userService.getUserMessages();
         return true;
     }
 }

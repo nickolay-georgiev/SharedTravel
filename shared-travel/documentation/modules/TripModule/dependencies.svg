@@ -24,115 +24,115 @@
 <title>cluster_TripModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-70 8,-195 1276,-195 1276,-70 8,-70"/>
 </g>
-<g id="clust10" class="cluster">
-<title>cluster_TripModule_imports</title>
-<polygon fill="none" stroke="black" points="1124,-78 1124,-130 1268,-130 1268,-78 1124,-78"/>
-</g>
 <g id="clust2" class="cluster">
 <title>cluster_TripModule_declarations</title>
-<polygon fill="none" stroke="black" points="16,-78 16,-130 1116,-130 1116,-78 16,-78"/>
+<polygon fill="none" stroke="black" points="168,-78 168,-130 1268,-130 1268,-78 168,-78"/>
+</g>
+<g id="clust10" class="cluster">
+<title>cluster_TripModule_imports</title>
+<polygon fill="none" stroke="black" points="16,-78 16,-130 160,-130 160,-78 16,-78"/>
 </g>
 <!-- TripComponent -->
 <g id="node1" class="node">
 <title>TripComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="1107.94,-122 1002.06,-122 1002.06,-86 1107.94,-86 1107.94,-122"/>
-<text text-anchor="middle" x="1055" y="-99.8" font-family="Times,serif" font-size="14.00">TripComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1259.94,-122 1154.06,-122 1154.06,-86 1259.94,-86 1259.94,-122"/>
+<text text-anchor="middle" x="1207" y="-99.8" font-family="Times,serif" font-size="14.00">TripComponent</text>
 </g>
 <!-- TripModule -->
 <g id="node8" class="node">
 <title>TripModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="719.65,-187 716.65,-191 695.65,-191 692.65,-187 636.35,-187 636.35,-151 719.65,-151 719.65,-187"/>
-<text text-anchor="middle" x="678" y="-164.8" font-family="Times,serif" font-size="14.00">TripModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="722.65,-187 719.65,-191 698.65,-191 695.65,-187 639.35,-187 639.35,-151 722.65,-151 722.65,-187"/>
+<text text-anchor="middle" x="681" y="-164.8" font-family="Times,serif" font-size="14.00">TripModule</text>
 </g>
 <!-- TripComponent&#45;&gt;TripModule -->
 <g id="edge1" class="edge">
 <title>TripComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M1055,-122.11C1055,-141.34 1055,-169 1055,-169 1055,-169 729.79,-169 729.79,-169"/>
-<polygon fill="black" stroke="black" points="729.79,-165.5 719.79,-169 729.79,-172.5 729.79,-165.5"/>
+<path fill="none" stroke="black" d="M1207,-122.29C1207,-144.21 1207,-178 1207,-178 1207,-178 732.71,-178 732.71,-178"/>
+<polygon fill="black" stroke="black" points="732.71,-174.5 722.71,-178 732.71,-181.5 732.71,-174.5"/>
 </g>
 <!-- TripCreateComponent -->
 <g id="node2" class="node">
 <title>TripCreateComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="983.97,-122 842.03,-122 842.03,-86 983.97,-86 983.97,-122"/>
-<text text-anchor="middle" x="913" y="-99.8" font-family="Times,serif" font-size="14.00">TripCreateComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="1135.97,-122 994.03,-122 994.03,-86 1135.97,-86 1135.97,-122"/>
+<text text-anchor="middle" x="1065" y="-99.8" font-family="Times,serif" font-size="14.00">TripCreateComponent</text>
 </g>
 <!-- TripCreateComponent&#45;&gt;TripModule -->
 <g id="edge2" class="edge">
 <title>TripCreateComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M913,-122.03C913,-138.4 913,-160 913,-160 913,-160 729.74,-160 729.74,-160"/>
-<polygon fill="black" stroke="black" points="729.74,-156.5 719.74,-160 729.74,-163.5 729.74,-156.5"/>
+<path fill="none" stroke="black" d="M1065,-122.11C1065,-141.34 1065,-169 1065,-169 1065,-169 732.83,-169 732.83,-169"/>
+<polygon fill="black" stroke="black" points="732.83,-165.5 722.83,-169 732.83,-172.5 732.83,-165.5"/>
 </g>
 <!-- TripDetailComponent -->
 <g id="node3" class="node">
 <title>TripDetailComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="823.64,-122 684.36,-122 684.36,-86 823.64,-86 823.64,-122"/>
-<text text-anchor="middle" x="754" y="-99.8" font-family="Times,serif" font-size="14.00">TripDetailComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="975.64,-122 836.36,-122 836.36,-86 975.64,-86 975.64,-122"/>
+<text text-anchor="middle" x="906" y="-99.8" font-family="Times,serif" font-size="14.00">TripDetailComponent</text>
 </g>
 <!-- TripDetailComponent&#45;&gt;TripModule -->
 <g id="edge3" class="edge">
 <title>TripDetailComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M702,-122.11C702,-122.11 702,-140.99 702,-140.99"/>
-<polygon fill="black" stroke="black" points="698.5,-140.99 702,-150.99 705.5,-140.99 698.5,-140.99"/>
+<path fill="none" stroke="black" d="M906,-122.03C906,-138.4 906,-160 906,-160 906,-160 732.79,-160 732.79,-160"/>
+<polygon fill="black" stroke="black" points="732.79,-156.5 722.79,-160 732.79,-163.5 732.79,-156.5"/>
 </g>
 <!-- TripEditComponent -->
 <g id="node4" class="node">
 <title>TripEditComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="666.27,-122 537.73,-122 537.73,-86 666.27,-86 666.27,-122"/>
-<text text-anchor="middle" x="602" y="-99.8" font-family="Times,serif" font-size="14.00">TripEditComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="818.27,-122 689.73,-122 689.73,-86 818.27,-86 818.27,-122"/>
+<text text-anchor="middle" x="754" y="-99.8" font-family="Times,serif" font-size="14.00">TripEditComponent</text>
 </g>
 <!-- TripEditComponent&#45;&gt;TripModule -->
 <g id="edge4" class="edge">
 <title>TripEditComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M651.28,-122.11C651.28,-122.11 651.28,-140.99 651.28,-140.99"/>
-<polygon fill="black" stroke="black" points="647.78,-140.99 651.28,-150.99 654.78,-140.99 647.78,-140.99"/>
+<path fill="none" stroke="black" d="M706.22,-122.11C706.22,-122.11 706.22,-140.99 706.22,-140.99"/>
+<polygon fill="black" stroke="black" points="702.72,-140.99 706.22,-150.99 709.72,-140.99 702.72,-140.99"/>
 </g>
 <!-- TripListComponent -->
 <g id="node5" class="node">
 <title>TripListComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="519.71,-122 392.29,-122 392.29,-86 519.71,-86 519.71,-122"/>
-<text text-anchor="middle" x="456" y="-99.8" font-family="Times,serif" font-size="14.00">TripListComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="671.71,-122 544.29,-122 544.29,-86 671.71,-86 671.71,-122"/>
+<text text-anchor="middle" x="608" y="-99.8" font-family="Times,serif" font-size="14.00">TripListComponent</text>
 </g>
 <!-- TripListComponent&#45;&gt;TripModule -->
 <g id="edge5" class="edge">
 <title>TripListComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M456,-122.03C456,-138.4 456,-160 456,-160 456,-160 626.24,-160 626.24,-160"/>
-<polygon fill="black" stroke="black" points="626.24,-163.5 636.24,-160 626.24,-156.5 626.24,-163.5"/>
+<path fill="none" stroke="black" d="M655.39,-122.11C655.39,-122.11 655.39,-140.99 655.39,-140.99"/>
+<polygon fill="black" stroke="black" points="651.89,-140.99 655.39,-150.99 658.89,-140.99 651.89,-140.99"/>
 </g>
 <!-- TripMembersComponent -->
 <g id="node6" class="node">
 <title>TripMembersComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="374.31,-122 215.69,-122 215.69,-86 374.31,-86 374.31,-122"/>
-<text text-anchor="middle" x="295" y="-99.8" font-family="Times,serif" font-size="14.00">TripMembersComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="526.31,-122 367.69,-122 367.69,-86 526.31,-86 526.31,-122"/>
+<text text-anchor="middle" x="447" y="-99.8" font-family="Times,serif" font-size="14.00">TripMembersComponent</text>
 </g>
 <!-- TripMembersComponent&#45;&gt;TripModule -->
 <g id="edge6" class="edge">
 <title>TripMembersComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M295,-122.11C295,-141.34 295,-169 295,-169 295,-169 626.28,-169 626.28,-169"/>
-<polygon fill="black" stroke="black" points="626.28,-172.5 636.28,-169 626.28,-165.5 626.28,-172.5"/>
+<path fill="none" stroke="black" d="M447,-122.03C447,-138.4 447,-160 447,-160 447,-160 629.17,-160 629.17,-160"/>
+<polygon fill="black" stroke="black" points="629.17,-163.5 639.17,-160 629.17,-156.5 629.17,-163.5"/>
 </g>
 <!-- TripSearchFormComponent -->
 <g id="node7" class="node">
 <title>TripSearchFormComponent</title>
-<polygon fill="#ffffb3" stroke="black" points="197.86,-122 24.14,-122 24.14,-86 197.86,-86 197.86,-122"/>
-<text text-anchor="middle" x="111" y="-99.8" font-family="Times,serif" font-size="14.00">TripSearchFormComponent</text>
+<polygon fill="#ffffb3" stroke="black" points="349.86,-122 176.14,-122 176.14,-86 349.86,-86 349.86,-122"/>
+<text text-anchor="middle" x="263" y="-99.8" font-family="Times,serif" font-size="14.00">TripSearchFormComponent</text>
 </g>
 <!-- TripSearchFormComponent&#45;&gt;TripModule -->
 <g id="edge7" class="edge">
 <title>TripSearchFormComponent&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M111,-122.29C111,-144.21 111,-178 111,-178 111,-178 626.31,-178 626.31,-178"/>
-<polygon fill="black" stroke="black" points="626.31,-181.5 636.31,-178 626.31,-174.5 626.31,-181.5"/>
+<path fill="none" stroke="black" d="M263,-122.11C263,-141.34 263,-169 263,-169 263,-169 629.01,-169 629.01,-169"/>
+<polygon fill="black" stroke="black" points="629.01,-172.5 639.01,-169 629.01,-165.5 629.01,-172.5"/>
 </g>
 <!-- TripRoutingModule -->
 <g id="node9" class="node">
 <title>TripRoutingModule</title>
-<polygon fill="#8dd3c7" stroke="black" points="1260.27,-122 1257.27,-126 1236.27,-126 1233.27,-122 1131.73,-122 1131.73,-86 1260.27,-86 1260.27,-122"/>
-<text text-anchor="middle" x="1196" y="-99.8" font-family="Times,serif" font-size="14.00">TripRoutingModule</text>
+<polygon fill="#8dd3c7" stroke="black" points="152.27,-122 149.27,-126 128.27,-126 125.27,-122 23.73,-122 23.73,-86 152.27,-86 152.27,-122"/>
+<text text-anchor="middle" x="88" y="-99.8" font-family="Times,serif" font-size="14.00">TripRoutingModule</text>
 </g>
 <!-- TripRoutingModule&#45;&gt;TripModule -->
 <g id="edge8" class="edge">
 <title>TripRoutingModule&#45;&gt;TripModule</title>
-<path fill="none" stroke="black" d="M1196,-122.29C1196,-144.21 1196,-178 1196,-178 1196,-178 729.95,-178 729.95,-178"/>
-<polygon fill="black" stroke="black" points="729.95,-174.5 719.95,-178 729.95,-181.5 729.95,-174.5"/>
+<path fill="none" stroke="black" d="M88,-122.29C88,-144.21 88,-178 88,-178 88,-178 629.3,-178 629.3,-178"/>
+<polygon fill="black" stroke="black" points="629.3,-181.5 639.3,-178 629.3,-174.5 629.3,-181.5"/>
 </g>
 </g>
 </svg>

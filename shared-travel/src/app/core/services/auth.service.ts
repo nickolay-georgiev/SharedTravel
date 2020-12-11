@@ -3,13 +3,13 @@ import { Injectable, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
+import firebase from 'firebase/app'
 
-import { Observable, Subscription } from 'rxjs';
+import { from, Observable, of, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { IUser } from '../interfaces/user';
 import { snackBarError, snackBarInfo } from '../custom-functions/mat-snackbar-functions';
-
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +21,8 @@ export class AuthService implements OnDestroy {
   email: string;
   isLogged: boolean = false;
   subscriptions: Subscription[] = [];
+
+  user: firebase.User;
 
   constructor(
     public afs: AngularFirestore,
@@ -35,6 +37,10 @@ export class AuthService implements OnDestroy {
         this.isLogged = true;
       }
     })));
+  }
+
+  updateEmail(email): Observable<void> {
+    return from(this.user.updateEmail(email));
   }
 
   signIn(email: string, password: string) {
@@ -82,6 +88,7 @@ export class AuthService implements OnDestroy {
   getUserData(): Observable<IUser> {
     // return this.afAuth.onAuthStateChanged(user => ....);
     return this.afAuth.user.pipe(switchMap(user => {
+      this.user = user;
       this.userId = user.uid;
       return this.afs
         .doc<IUser>('users/' + user.uid)
@@ -116,7 +123,7 @@ export class AuthService implements OnDestroy {
       merge: true
     })
   }
-  
+
   get currentUserId() {
     return this.userId;
   }

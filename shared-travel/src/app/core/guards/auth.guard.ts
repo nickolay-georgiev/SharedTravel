@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router, CanLoad, Route, UrlSegment, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -12,16 +13,16 @@ export class AuthGuard implements CanLoad, CanActivate {
     ) { }
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
         return this.afAuth.authState
-        .pipe(map(user => {
-            if (user) {
-                return true;
-            }
-            this.router.navigate(['/login']);
-            return false;
-        }));
+            .pipe(map(user => {
+                if (user) {
+                    return true;
+                }
+                this.router.navigate(['/login']);
+                return false;
+            }));
     }
 
-    canLoad(route: Route, segments: UrlSegment[]) {
+    canLoad(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> {
         return this.afAuth.authState
             .pipe(map(user => {
                 if (user) {

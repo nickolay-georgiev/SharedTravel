@@ -16,7 +16,7 @@ import { AuthGuard } from './guards/auth.guard';
   declarations: [
     TransformUsernamePipe,
     ReadOnlyDirective,
-    HideElementDirective,
+    HideElementDirective
   ],
   imports: [
     CommonModule,
@@ -28,10 +28,10 @@ import { AuthGuard } from './guards/auth.guard';
   exports: [
     TransformUsernamePipe,
     ReadOnlyDirective,
-    HideElementDirective,    
+    HideElementDirective
   ],
   providers: [
-    AuthGuard,
+    AuthGuard
   ]
 })
 export class CoreModule { }

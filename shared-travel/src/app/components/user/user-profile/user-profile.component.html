@@ -106,8 +106,11 @@
                         <div class="form-group">
                           <label class="form-control-label" for="input-email">Email address</label>
                           <input type="email" formControlName="email" appReadOnly id="input-email"
-                            class="form-control form-control-alternative" [value]="user.email">
+                            class="form-control form-control-alternative">
                         </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.required && f.email.touched">
+                          Email is required
+                      </div>
                       </div>
                     </div>
                     <div class="row">
@@ -123,32 +126,28 @@
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">Last name</label>
                           <input type="text" appReadOnly formControlName="lastName"
-                            class="form-control form-control-alternative" placeholder="Last name"
-                            [value]="user.lastName">
+                            class="form-control form-control-alternative" placeholder="Last name">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-last-name">Age</label>
+                          <label class="form-control-label" for="input-last-name">Age (*optional) </label>
                           <input type="text" appReadOnly formControlName="age"
-                            class="form-control form-control-alternative" placeholder="Age"
-                            [value]="user.age">
+                            class="form-control form-control-alternative" placeholder="Age">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
-                          <label class="form-control-label" for="input-last-name">Education</label>
+                          <label class="form-control-label" for="input-last-name">Education (*optional)</label>
                           <input type="text" appReadOnly formControlName="education"
-                            class="form-control form-control-alternative" placeholder="Education"
-                            [value]="user.education">
+                            class="form-control form-control-alternative" placeholder="Education">
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">University (*optional)</label>
                           <input type="text" appReadOnly formControlName="university" id="input-last-name"
-                            class="form-control form-control-alternative" placeholder="University"
-                            [value]="user.university">
+                            class="form-control form-control-alternative" placeholder="University">
                         </div>
                       </div>
                     </div>
@@ -172,21 +171,21 @@
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-city">City</label>
                           <input type="text" formControlName="city" appReadOnly id="input-city"
-                            class="form-control form-control-alternative" [value]="user.city">
+                            class="form-control form-control-alternative">
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-country">Country</label>
                           <input type="text" formControlName="country" appReadOnly id="input-country"
-                            class="form-control form-control-alternative" [value]="user.country">
+                            class="form-control form-control-alternative">
                         </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label class="form-control-label" for="input-country">Gender</label>
                           <input type="text" formControlName="gender" appReadOnly id="gender"
-                            class="form-control form-control-alternative" [value]="user.gender">
+                            class="form-control form-control-alternative">
                         </div>
                       </div>
                     </div>
@@ -199,7 +198,7 @@
                       <label>About Me</label>
                       <textarea rows="4" formControlName="aboutMe" appReadOnly
                         class="form-control form-control-alternative"
-                        placeholder="Tell us more about yourself ...">{{user.aboutMe}}</textarea>
+                        placeholder="Tell us more about yourself ..."></textarea>
                     </div>
                   </div>
                   <button appHideElement class="btn btn-sm btn-primary">Save Changes</button>

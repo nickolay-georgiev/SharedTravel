@@ -12,11 +12,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { UserNotificationFormComponent } from './user-notification-form/user-notification-form.component';
 import { UserMessagesComponent } from './user-messages/user-messages.component';
 import { UserMessageComponent } from './user-message/user-message.component';
 import { UserRoutingModule } from './user-routing.module';
+import { UserMessagesResolver } from 'src/app/core/resolvers/user-messages-resolver';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { UserRoutingModule } from './user-routing.module';
     CommonModule,
     ReactiveFormsModule,
     RouterModule,
-    CoreModule,   
+    CoreModule,
     UserRoutingModule,
     MatTableModule,
     MatPaginatorModule,

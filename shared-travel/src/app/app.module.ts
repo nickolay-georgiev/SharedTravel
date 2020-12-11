@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 
 import { AuthModule } from './components/auth/auth.module';
 import { CoreModule } from './core/core.module';
-import { CustomRouteReuseStrategy } from './core/router-reuse-strategy/custom-strategy';
 import { SharedModule } from './components/shared/shared.module';
 import { HomeModule } from './components/home/home.module';
+import { CustomRouteReuseStrategy } from './core/router-reuse-strategy/custom-strategy';
 
 @NgModule({
   declarations: [

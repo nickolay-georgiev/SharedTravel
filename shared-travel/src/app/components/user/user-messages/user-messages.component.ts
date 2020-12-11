@@ -11,12 +11,13 @@ import { UserService } from 'src/app/core/services/user.service';
 })
 export class UserMessagesComponent implements OnInit {
 
-  messages$: Observable<IMessage[]> = null;
+  messages$: Observable<IMessage[]>;
 
   constructor(private userService: UserService, public cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    this.messages$ = this.userService.getUserMessages();
+    // this.messages$ = this.userService.getUserMessages();
+    this.messages$ = this.userService.messages$;
   }
 
   ngOnChanges(): void {

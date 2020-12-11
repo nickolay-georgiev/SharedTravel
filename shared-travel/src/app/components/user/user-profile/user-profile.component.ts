@@ -46,8 +46,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   get f() {
-    return this.editForm.value;
-  }
+    return this.editForm.controls;
+  }  
 
   submitForm(): void {
     this.userService.updateUserData(this.editForm.value);
