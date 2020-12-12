@@ -16,7 +16,6 @@ export class UserMessagesComponent implements OnInit {
   constructor(private userService: UserService, public cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    // this.messages$ = this.userService.getUserMessages();
     this.messages$ = this.userService.messages$;
   }
 

@@ -1410,3 +1410,7 @@
     display: flex;
     justify-content: center;
   }
+
+  .gender{
+    font-weight: 600;
+  }

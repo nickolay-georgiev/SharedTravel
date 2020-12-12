@@ -9,14 +9,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class UserNotificationFormComponent implements OnInit {
 
-  messageForm: FormGroup
+  messageForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
   
   ngOnInit(): void {
     this.messageForm = this.fb.group({
       message: ['']
-    })
+    });
   }
 
 }

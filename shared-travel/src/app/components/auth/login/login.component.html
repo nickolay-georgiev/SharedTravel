@@ -16,7 +16,8 @@
 
             <input formControlName="password" type="password" id="password" class="fadeIn third" name="password"
                 placeholder="Password">
-            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.required && f.password.touched">Password is required
+            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.required && f.password.touched">Password is
+                required
             </div>
             <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.minlength && f.password.touched">
                 Password can not be less than 6 symbols
@@ -32,4 +33,3 @@
         </div>
     </div>
 </div>
-

@@ -39,7 +39,7 @@ export class TripListComponent implements OnInit, OnDestroy, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  getByFilters(form: { country: string, city: string, filterBy: string }) {
+  getTripsByFilters(form: { country: string, city: string, filterBy: string }) {
     this.tripService.getTripsByFilter(form).subscribe(res => {
       this.trips = res;
       this.dataSource.data = this.trips;

@@ -49,6 +49,10 @@
 <ng-container *ngIf="tripMembers?.length > 0">
   <h1 class="trip-members">Trip Members</h1>
   <div class="user-wrapper">
-    <app-trip-members *ngFor="let user of tripMembers" [user]="user"></app-trip-members>
+    <app-trip-members 
+    *ngFor="let user of tripMembers" [user]="user"
+    [isCreator]="user.uid === trip.creator">
+  </app-trip-members>
   </div>
 </ng-container>
+

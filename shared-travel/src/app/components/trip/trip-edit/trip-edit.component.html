@@ -128,7 +128,7 @@
                     type="submit" class="modal-content-btn" for="modal-toggle">Delete trip</label>
                 <label id="delete-btn" *ngIf="membersCount > 1 && currentDate < tripStartDate" (click)="leaveTrip()"
                     type="submit" class="modal-content-btn" for="modal-toggle">Leave this group</label>
-                <label *ngIf="currentDate > tripStartDate && currentDate <= tripEndDate" id="delete-btn" type="submit"
+                <label *ngIf="currentDate > tripStartDate && currentDate <= tripEndDate && membersCount > 1" id="delete-btn" type="submit"
                     class="modal-content-btn start-trip" for="modal-toggle">this trip
                     has already start, you are not allowed to modify it
                 </label>

@@ -16,7 +16,7 @@ export class UserProfileComponent implements OnInit {
 
   editForm: FormGroup;
 
-  userDataSubscriptions: Subscription[] = [];
+  subscriptions: Subscription[] = [];
   user: IUser;
 
   constructor(
@@ -26,38 +26,38 @@ export class UserProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.userDataSubscriptions.push(this.authService.getUserData().subscribe(user => {
+    this.subscriptions.push(this.authService.getUserData().subscribe(user => {
       this.user = user;
-     
+
       this.editForm = this.fb.group({
-        firstName: [this.user.firstName, [Validators.nullValidator]],
-        lastName: [this.user.lastName, [Validators.nullValidator]],
+        firstName: [this.user.firstName, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
+        lastName: [this.user.lastName, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
         email: [this.user.email, [Validators.email, Validators.required]],
-        city: [this.user.city, [Validators.nullValidator]],
-        country: [this.user.country, [Validators.nullValidator]],
-        gender: [this.user.gender, [Validators.nullValidator]],
+        city: [this.user.city, [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+        country: [this.user.country, [Validators.required]],
+        gender: [this.user.gender, [Validators.required]],
         aboutMe: [this.user.aboutMe, [Validators.nullValidator]],
         username: [this.user.username, [Validators.nullValidator]],
-        age: [this.user.age, [Validators.nullValidator]],
-        university : [this.user.university, [Validators.nullValidator]],
-        education: [this.user.education, [Validators.nullValidator]]
+        age: [this.user.age, [Validators.min(14), Validators.max(99)]],
+        university: [this.user.university, [Validators.minLength(5), Validators.maxLength(50)]],
+        education: [this.user.education, [Validators.minLength(5), Validators.maxLength(50)]]
       })
     }));
   }
 
   get f() {
     return this.editForm.controls;
-  }  
+  }
 
   submitForm(): void {
     this.userService.updateUserData(this.editForm.value);
   }
 
   changePhoto(photo: File): void {
-    this.userDataSubscriptions.push(this.userService.updateUserPhoto(photo).subscribe());
+    this.subscriptions.push(this.userService.updateUserPhoto(photo).subscribe());
   }
 
   ngOnDestroy(): void {
-    this.userDataSubscriptions.forEach(x => x.unsubscribe());
+    this.subscriptions.forEach(x => x.unsubscribe());
   }
 }

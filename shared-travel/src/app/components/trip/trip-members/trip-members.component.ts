@@ -10,5 +10,8 @@ import { IUser } from 'src/app/core/interfaces/user';
 export class TripMembersComponent {
   @Input()
   user: IUser  
+
+  @Input()
+  isCreator: boolean;
   constructor() { }
 }

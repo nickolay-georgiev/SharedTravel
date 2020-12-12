@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,6 +12,7 @@ import { UserService } from 'src/app/core/services/user.service';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ITrip } from 'src/app/core/interfaces/trip';
 import { UserNotificationFormComponent } from '../user-notification-form/user-notification-form.component';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-user-trip',
@@ -52,15 +52,16 @@ export class UserTripComponent implements OnInit, AfterViewInit, OnDestroy {
     };
   }
 
-  viewTripDetails(trip, event) {
+  viewTripDetails(trip, event): void {
     if (event.target.tagName == 'BUTTON') { return };
     let path = this.router.url.endsWith('joins') ? '/user/joins' : '/user/trip';
     this.router.navigate([path, trip.id]);
   }
 
-  openDialog(trip: ITrip) {
+  openDialog(trip: ITrip): void {
     const dialogRef = this.dialog.open(UserNotificationFormComponent);
     this.subscriptions.push(dialogRef.afterClosed().subscribe(message => {
+      if (!(message instanceof FormGroup)) { return; }
       this.userService.notifyUsers(trip.members, message);
     }));
   }

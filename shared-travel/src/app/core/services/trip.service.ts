@@ -23,7 +23,7 @@ export class TripService {
     private router: Router,
     private authService: AuthService,
     private snackBar: MatSnackBar
-    ) { }
+  ) { }
 
   filterFunctions = {
     'Males only': (trips: ITrip[]): ITrip[] => trips.filter(x => x.groupType === 'Males only'),
@@ -55,7 +55,7 @@ export class TripService {
             console.log("No Data Available");
           }
           let id = params.payload.id;
-          let members = params.payload.data().members;
+          let members = params.payload.data()?.members || [];
           if (members.length == 0) { members.push('empty') };
           return forkJoin([of({ id, ...params.payload.data() }),
           this.db.collection('users', ref => ref
@@ -69,7 +69,7 @@ export class TripService {
   getUserTrips(userId) {
     let url = this.router.url;
     if (url.endsWith('trip')) {
-      return this.getTripsByUserIdWithProgress(userId);
+      return this.getTripsWhereUserIsCreator(userId);
     } else {
       return this.getTripsWhereUserIsMember(userId);;
     }
@@ -79,17 +79,19 @@ export class TripService {
     return this.db.collection<ITrip>('trips', ref => ref
       .where('members', 'array-contains', id))
       .get()
-      .pipe(map(res => {
-        return res.docs.map(doc => {
-          let data = doc.data();
-          let endDate = new Date(data.duration.endDate);
-          let currentDate = new Date();
-          return Object.assign(data, { progress: endDate <= currentDate, id: doc.id })
-        });
-      }))
+      .pipe(
+        map(res => {
+          return res.docs.filter(x => x.data().creator != id).map(doc => {
+            let data = doc.data();
+            if (data.creator == id) { return of({}) }
+            let endDate = new Date(data.duration.endDate);
+            let currentDate = new Date();
+            return Object.assign(data, { progress: endDate <= currentDate, id: doc.id })
+          });
+        }))
   }
 
-  getTripsByUserIdWithProgress(id: string) {
+  getTripsWhereUserIsCreator(id: string) {
     return this.db.collection<ITrip>('trips', ref => ref.
       where('creator', '==', id))
       .get()
@@ -109,7 +111,10 @@ export class TripService {
 
   deleteTrip(id: string) {
     return this.db.collection<ITrip>('trips').doc(id).delete().then(() => {
-      this.router.navigate(['/trip/list'])
+      snackBarInfo("Trip was successfully deleted.", this.snackBar);
+      this.router.navigate(['/trip/list']);
+    }).catch(error => {
+      snackBarError(error.message, this.snackBar);
     });
   }
 
@@ -123,9 +128,6 @@ export class TripService {
 
     return this.searchOptions(country, city)
       .pipe(map(response => {
-        if (!response.length) {
-          console.log("No Data Available");
-        }
         this.trips = [];
         for (let item of response) {
           const trip = item.payload.doc.data() as ITrip;
@@ -143,9 +145,6 @@ export class TripService {
       .limit(6))
       .snapshotChanges()
       .pipe(map(response => {
-        if (!response.length) {
-          console.log("No Data Available");
-        }
         this.trips = [];
         for (let item of response) {
           const trip = item.payload.doc.data();
@@ -178,27 +177,27 @@ export class TripService {
       }));
   }
 
-  searchOptions(country, city) {
-    if (country && city) {
-      return this.db.collection('trips', ref => {
-        return ref
-          .where('country', '==', country)
-          .where('city', '==', city)
-      }).snapshotChanges();
-    } else if (city && !country) {
-      return this.db.collection('trips', ref => {
-        return ref
-          .where('city', '==', city)
-      }).snapshotChanges();
-    } else if (country && !city) {
-      return this.db.collection('trips', ref => {
-        return ref
-          .where('country', '==', country)
-      }).snapshotChanges();
-    }
-  }
+  // searchOptions1(country, city) {
+  //   if (country && city) {
+  //     return this.db.collection('trips', ref => {
+  //       return ref
+  //         .where('country', '==', country)
+  //         .where('city', '==', city)
+  //     }).snapshotChanges();
+  //   } else if (city && !country) {
+  //     return this.db.collection('trips', ref => {
+  //       return ref
+  //         .where('city', '==', city)
+  //     }).snapshotChanges();
+  //   } else if (country && !city) {
+  //     return this.db.collection('trips', ref => {
+  //       return ref
+  //         .where('country', '==', country)
+  //     }).snapshotChanges();
+  //   }
+  // }
 
-  searchOptionsTest(country, city) {
+  searchOptions(country, city) {
     if (country && city) {
       return this.db.collection<ITrip>('trips', ref => {
         let query: firebase.firestore.CollectionReference | firebase.firestore.Query = ref;

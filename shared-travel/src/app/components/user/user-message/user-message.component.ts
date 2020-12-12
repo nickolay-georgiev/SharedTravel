@@ -12,7 +12,6 @@ export class UserMessageComponent implements OnInit {
 
   @Input() message: IMessage;
   @Output() deleteMessageEmitter = new EventEmitter();
-  @Output() readMessageEmitter = new EventEmitter();
   panelOpenState: boolean;
 
   constructor() { }

@@ -14,15 +14,33 @@
                             <div class="col form-group">
                                 <label>First name </label>
                                 <input formControlName="firstName" type="text" class="form-control" placeholder="">
-                                <div class="alert alert-danger fadeIn" *ngIf="f.firstName.errors?.required && f.firstName.touched">
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.firstName.errors?.required && f.firstName.touched">
                                     First name is required
+                                </div>
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.firstName.errors?.minlength && f.firstName.touched">
+                                    First name can not be less than 2 letters.
+                                </div>
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.firstName.errors?.maxlength && f.firstName.touched">
+                                    First name can not be more than 30 letters.
                                 </div>
                             </div> <!-- form-group end.// -->
                             <div class="col form-group">
                                 <label>Last name</label>
                                 <input formControlName="lastName" type="text" class="form-control" placeholder=" ">
-                                <div class="alert alert-danger fadeIn" *ngIf="f.lastName.errors?.required && f.lastName.touched">
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.lastName.errors?.required && f.lastName.touched">
                                     Last name is required
+                                </div>
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.lastName.errors?.minlength && f.lastName.touched">
+                                    Last name can not be less than 2 letters.
+                                </div>
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.lastName.errors?.maxlength && f.lastName.touched">
+                                    Last name can not be more than 30 letters.
                                 </div>
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
@@ -39,11 +57,13 @@
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label class="form-check form-check-inline">
-                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" value="Male">
+                                <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                                    value="Male">
                                 <span class="form-check-label"> Male </span>
                             </label>
                             <label class="form-check form-check-inline">
-                                <input formControlName="gender" class="form-check-input" type="radio" name="gender" value="Female">
+                                <input formControlName="gender" class="form-check-input" type="radio" name="gender"
+                                    value="Female">
                                 <span class="form-check-label"> Female</span>
                             </label>
                         </div> <!-- form-group end.// -->
@@ -51,11 +71,18 @@
                             <div class="form-group col-md-6">
                                 <label>City</label>
                                 <input formControlName="city" type="text" class="form-control">
-                                <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.required && f.city.touched">
+                                <div class="alert alert-danger fadeIn"
+                                    *ngIf="f.city.errors?.required && f.city.touched">
                                     City is required
                                 </div>
+                                <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.minlength && f.city.touched">
+                                    City name can not be less than 2 letters.
+                                  </div>
+                                  <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.maxlength && f.city.touched">
+                                    City name can not be more than 50 letters.
+                                  </div>
                             </div> <!-- form-group end.// -->
-                            <div class="form-group col-md-6" >
+                            <div class="form-group col-md-6">
                                 <label>Country</label>
                                 <select formControlName="country" id="inputState" class="form-control">
                                     <option value="" selected> Bulgaria</option>
@@ -66,26 +93,31 @@
                         <div class="form-group">
                             <label>Create password</label>
                             <input formControlName="password" class="form-control" type="password">
-                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.required && f.password.touched">
+                            <div class="alert alert-danger fadeIn"
+                                *ngIf="f.password.errors?.required && f.password.touched">
                                 Password is required
                             </div>
-                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.minlength && f.password.touched">
+                            <div class="alert alert-danger fadeIn"
+                                *ngIf="f.password.errors?.minlength && f.password.touched">
                                 Password can not be less than 6 symbols
                             </div>
-                            <div class="alert alert-danger fadeIn" *ngIf="f.password.errors?.maxlength && f.password.touched">
+                            <div class="alert alert-danger fadeIn"
+                                *ngIf="f.password.errors?.maxlength && f.password.touched">
                                 Password can not be more than 15 symbols
                             </div>
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
                             <label>Repeat password</label>
                             <input formControlName="rePassword" class="form-control" type="password">
-                            <div class="alert alert-danger fadeIn" *ngIf="registerForm.value.password !== registerForm.value.rePassword && f.rePassword.touched">
+                            <div class="alert alert-danger fadeIn"
+                                *ngIf="registerForm.value.password !== registerForm.value.rePassword && f.rePassword.touched">
                                 Passwords do not match!
                             </div>
 
                         </div> <!-- form-group end.// -->
                         <div class="form-group">
-                            <button [disabled]="!isValid" type="submit" class="btn btn-primary btn-block"> Sign Up </button>
+                            <button [disabled]="!isValid" type="submit" class="btn btn-primary btn-block"> Sign Up
+                            </button>
                         </div> <!-- form-group// -->
                         <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br>
                             Terms of use and Privacy Policy.</small>

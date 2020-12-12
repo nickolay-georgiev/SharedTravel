@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { UploadTaskSnapshot } from '@angular/fire/storage/interfaces';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
@@ -7,7 +8,7 @@ import firebase from 'firebase/app'
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { BehaviorSubject, forkJoin, Observable, of, Subscription } from 'rxjs';
-import { concatMap, finalize, map, tap } from 'rxjs/operators';
+import { finalize, map } from 'rxjs/operators';
 
 import { snackBarError, snackBarInfo } from '../custom-functions/mat-snackbar-functions';
 
@@ -56,25 +57,12 @@ export class UserService implements OnDestroy {
     ).subscribe(
       next => {
         this.router.navigate(['/user/profile']);
-        snackBarInfo("User data successfully updated.", this.snackBar);
+        snackBarInfo("Your profile was successfully updated.", this.snackBar);
       },
       error => {
         snackBarError(error.message, this.snackBar)
       }
     ))
-
-    // forkJoin([
-    //   changeEmailRequest,
-    //   this.afs.collection('users').doc(this.userId).update(data),
-    // ]).subscribe(
-    //   next => {
-    //     this.router.navigate(['/user/profile']);
-    //     snackBarInfo("User data successfully updated.", this.snackBar);
-    //   },
-    //   error => {
-    //     snackBarError(error.message, this.snackBar)
-    //   }
-    // )
   }
 
   updateUserPhoto(photo: File): Observable<UploadTaskSnapshot> {
@@ -89,7 +77,7 @@ export class UserService implements OnDestroy {
     );
   }
 
-  notifyUsers(members: string[], message: string) {
+  notifyUsers(members: string[], message: FormGroup) {
     let date = new Date().toString();
     members = members.filter(x => x !== this.userId);
     members.forEach(member => {
@@ -113,17 +101,9 @@ export class UserService implements OnDestroy {
     this.subscriptions.push(this.afs.collection<IMessage>('users-messages').doc(this.userId)
       .snapshotChanges()
       .subscribe(res => {
-        this.userMessages$.next(res.payload.data()['notifications'])
+        this.userMessages$.next(res.payload.data()['notifications']);
       }));
   }
-
-  // getUserMessages(): Observable<IMessage[]> {
-  //   return this.afs.collection<IMessage>('users-messages').doc(this.userId)
-  //     .snapshotChanges()
-  //     .pipe(map(res => {
-  //       return res.payload.data()['notifications'];
-  //     }))
-  // }
 
   deleteUserMessage(message: IMessage) {
     this.afs.collection('users-messages').doc(this.userId).update({

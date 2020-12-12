@@ -21,7 +21,6 @@ export class AuthService implements OnDestroy {
   email: string;
   isLogged: boolean = false;
   subscriptions: Subscription[] = [];
-
   user: firebase.User;
 
   constructor(
@@ -86,7 +85,6 @@ export class AuthService implements OnDestroy {
   }
 
   getUserData(): Observable<IUser> {
-    // return this.afAuth.onAuthStateChanged(user => ....);
     return this.afAuth.user.pipe(switchMap(user => {
       this.user = user;
       this.userId = user.uid;

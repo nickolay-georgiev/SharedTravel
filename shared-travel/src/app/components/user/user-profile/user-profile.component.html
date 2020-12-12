@@ -13,8 +13,8 @@
           <div class="row">
             <div class="col-lg-7 col-md-10">
               <h1 class="display-2 text-white">Hello {{user.firstName}}</h1>
-              <p class="text-white mt-0 mb-5">This is your profile page. You can see the progress you've made with your
-                work and manage your projects or assigned tasks</p>
+              <p class="text-white mt-0 mb-5">This is your profile page. You can see your profile details and manage 
+                your data using the Edit button </p>
               <a routerLink="/user/edit" appHideElement class="btn btn-info">Edit profile</a>
             </div>
           </div>
@@ -43,7 +43,7 @@
               <div class="card-body pt-0 pt-md-4">
                 <div class="row">
                   <div class="col">
-                    <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                    <!-- <div class="card-profile-stats d-flex justify-content-center mt-md-5">
                       <div>
                         <span class="heading">22</span>
                         <span class="description">Friends</span>
@@ -56,7 +56,7 @@
                         <span class="heading">89</span>
                         <span class="description">Comments</span>
                       </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="text-center">
@@ -97,8 +97,8 @@
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-username">Username</label>
-                          <input id="usernameInput" ngClass="testClass" type="text" disabled appReadOnly id="input-username"
-                            class="form-control form-control-alternative" placeholder="Username"
+                          <input id="usernameInput" ngClass="testClass" type="text" disabled appReadOnly
+                            id="input-username" class="form-control form-control-alternative" placeholder="Username"
                             [value]="(user.email | transformUsername)">
                         </div>
                       </div>
@@ -110,7 +110,10 @@
                         </div>
                         <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.required && f.email.touched">
                           Email is required
-                      </div>
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.email.errors?.email && f.email.touched">
+                          Please enter a valid email
+                        </div>
                       </div>
                     </div>
                     <div class="row">
@@ -118,8 +121,19 @@
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-first-name">First name</label>
                           <input type="text" formControlName="firstName" appReadOnly id="input-first-name"
-                            class="form-control form-control-alternative" placeholder="First name"
-                            [value]="user.firstName">
+                            class="form-control form-control-alternative" placeholder="First name">
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.firstName.errors?.required && f.firstName.touched || f.firstName.value.trim() == ''">
+                          First name is required
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.firstName.errors?.minlength && f.firstName.touched">
+                          First name can not be less than 2 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.firstName.errors?.maxlength && f.firstName.touched">
+                          First name can not be more than 30 letters.
                         </div>
                       </div>
                       <div class="col-lg-6">
@@ -128,12 +142,30 @@
                           <input type="text" appReadOnly formControlName="lastName"
                             class="form-control form-control-alternative" placeholder="Last name">
                         </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.lastName.errors?.required && f.lastName.touched || f.lastName.value.trim() == ''">
+                          Last name is required
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.lastName.errors?.minlength && f.lastName.touched">
+                          Last name can not be less than 2 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.lastName.errors?.maxlength && f.lastName.touched">
+                          Last name can not be more than 30 letters.
+                        </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">Age (*optional) </label>
-                          <input type="text" appReadOnly formControlName="age"
+                          <input type="number" appReadOnly formControlName="age"
                             class="form-control form-control-alternative" placeholder="Age">
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.age.errors?.min && f.age.touched">
+                          Age can not be less than 14 years.
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.age.errors?.max && f.age.touched">
+                          Age can not be more than 99 years.
                         </div>
                       </div>
                       <div class="col-lg-6">
@@ -142,12 +174,28 @@
                           <input type="text" appReadOnly formControlName="education"
                             class="form-control form-control-alternative" placeholder="Education">
                         </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.education.errors?.minlength && f.education.touched">
+                          Education can not be less than 5 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.education.errors?.maxlength && f.education.touched">
+                          Education can not be more than 50 letters.
+                        </div>
                       </div>
                       <div class="col-lg-6">
                         <div class="form-group focused">
                           <label class="form-control-label" for="input-last-name">University (*optional)</label>
                           <input type="text" appReadOnly formControlName="university" id="input-last-name"
                             class="form-control form-control-alternative" placeholder="University">
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.university.errors?.minlength && f.university.touched">
+                          University name can not be less than 5 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.university.errors?.maxlength && f.university.touched">
+                          University name can not be more than 50 letters.
                         </div>
                       </div>
                     </div>
@@ -173,6 +221,16 @@
                           <input type="text" formControlName="city" appReadOnly id="input-city"
                             class="form-control form-control-alternative">
                         </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.city.errors?.required && f.city.touched || f.city.value.trim() == ''">
+                          City name is required.
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.minlength && f.city.touched">
+                          City name can not be less than 2 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.city.errors?.maxlength && f.city.touched">
+                          City name can not be more than 50 letters.
+                        </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group focused">
@@ -180,12 +238,30 @@
                           <input type="text" formControlName="country" appReadOnly id="input-country"
                             class="form-control form-control-alternative">
                         </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.country.errors?.required && f.country.touched || f.country.value.trim() == ''">
+                          Country name is required.
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.country.errors?.minlength && f.country.touched">
+                          Country name can not be less than 2 letters.
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.country.errors?.maxlength && f.country.touched">
+                          Country name can not be more than 50 letters.
+                        </div>
                       </div>
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label class="form-control-label" for="input-country">Gender</label>
                           <input type="text" formControlName="gender" appReadOnly id="gender"
                             class="form-control form-control-alternative">
+                        </div>
+                        <div class="alert alert-danger fadeIn" *ngIf="f.gender.errors?.required && f.gender.touched">
+                          Gender type is required.
+                        </div>
+                        <div class="alert alert-danger fadeIn"
+                          *ngIf="f.gender.value.toLowerCase() != 'male' || f.gender.value.toLowerCase() != 'female'  && f.gender.touched">
+                          Allowed gender types are <span class="gender">Male</span> or <span
+                            class="gender">Female</span>.
                         </div>
                       </div>
                     </div>

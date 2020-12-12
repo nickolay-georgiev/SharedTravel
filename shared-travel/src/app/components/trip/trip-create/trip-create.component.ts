@@ -43,7 +43,6 @@ export class TripCreateComponent implements OnInit {
     let creatorId = this.authService.currentUserId;    
     let trip = Object.assign({ creator: creatorId, members: [] }, this.tripForm.value);
     this.tripService.createTrip(trip);
-    this.tripForm.reset();
   }
 
   get f() {

@@ -11,10 +11,10 @@ import { UserService } from 'src/app/core/services/user.service';
 @Component({
   selector: 'app-trip-detail',
   templateUrl: './trip-detail.component.html',
-  styleUrls: ['../trip/trip.component.css','./trip-detail.component.css']
+  styleUrls: ['../trip/trip.component.css', './trip-detail.component.css']
 })
-export class TripDetailComponent implements OnInit { 
-  
+export class TripDetailComponent implements OnInit {
+
   subscriptions: Subscription[] = [];
 
   tripId: string;
@@ -28,8 +28,7 @@ export class TripDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private tripService: TripService,
-    private authService: AuthService,
-    private userService: UserService) { }
+    private authService: AuthService) { }
 
   ngOnInit(): void {
     this.userId = this.authService.currentUserId;
@@ -37,38 +36,27 @@ export class TripDetailComponent implements OnInit {
 
     this.tripService.getTripById(this.tripId).subscribe(([trip, members]) => {
       this.trip = trip;
+      if (!this.tripId) { return; }
       if (this.trip) {
         this.isCreator = this.trip.creator === this.userId;
         this.isTripMember = this.trip.members.some(x => x === this.userId);
       } else {
         this.isCreator = false;
       }
-      this.tripMembers = members.docs.map(member => { return { ...member.data()} });
+      this.tripMembers = members.docs.map(member => { return { ...member.data() } });
     })
-
-    // this.subscriptions.push(this.tripService.getTripById(this.tripId).subscribe(response => {
-    //   this.trip = response;
-    //   this.trip.duration.startDate;
-    //   if (this.trip) {
-    //     this.isCreator = this.trip.creator === this.userId;
-    //     this.isTripMember = this.trip.members.some(x => x === this.userId);
-    //     this.tripMembers = this.trip.members;
-    //   } else {
-    //     this.isCreator = false;
-    //   }
-    // }));
   }
 
-  updateTripDetails(data) {
+  updateTripDetails(data): void {
     this.tripService.updateTrip(this.tripId, data);
   }
 
-  joinTrip() {
+  joinTrip(): void {
     this.trip.members.push(this.userId);
     this.tripService.updateTrip(this.tripId, { members: this.trip.members });
   }
 
-  leaveTrip() {
+  leaveTrip(): void {
     this.trip.members = this.trip.members.filter(x => x !== this.userId);
     if (this.isCreator) {
       this.tripService.updateTrip(this.tripId, { members: this.trip.members, creator: null });
@@ -77,8 +65,9 @@ export class TripDetailComponent implements OnInit {
     }
   }
 
-  deleteTrip() {
+  deleteTrip(): void {
     this.tripService.deleteTrip(this.tripId);
+    this.tripId = undefined;
   }
 
   ngOnDestroy(): void {

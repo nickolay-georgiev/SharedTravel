@@ -7,8 +7,12 @@
         </div>
     </div>
     <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-        <div class="d-flex justify-content-between">
+        <div *ngIf="isCreator" class="d-flex justify-content-between" id="star-div">
+            <img src="../../../../assets/icons/star.icon.png" alt="">
         </div>
+    </div>
+    <div *ngIf="isCreator" class="second-star">
+        <img src="../../../../assets/icons/star.icon.png" alt="">
     </div>
 
     <div class="card-body pt-0 pt-md-4">
@@ -20,6 +24,7 @@
                 <i class="ni location_pin mr-2"></i>{{user.city}}, {{user.country}}
             </div>
             <hr class="my-4">
+            <p *ngIf="isCreator" class="creator">Trip Creator</p>
         </div>
     </div>
 </div>
